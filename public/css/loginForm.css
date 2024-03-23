@@ -1,0 +1,132 @@
+*
+{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+body
+{   display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+
+    margin: 0%;
+    padding: 0%;
+    background :url(../images/login.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.cc
+{
+    width: 420px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .2);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    color: #54A9BE;
+    border-radius: 40px;
+   padding: 30px 40px;
+
+}
+
+.cc h2
+{
+    font-size: 60px;
+    color:#54A9BE;
+    text-align: center;
+}
+.cc .input-box
+{
+    width: 100%;
+    height: 50px;
+    margin: 30px 0;
+    position: relative;
+}
+.input-box input
+{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    border: 2px solid  #54A9BE;
+    border-radius: 40px;
+    font-size: 16px;
+    color: #54A9BE;
+    padding: 20px 45px 20px 20px ;
+
+}
+.input-box input::placeholder
+{
+    color: #54A9BE;
+
+}
+.input-box i
+{
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translatey(-50%);
+    font-size: 20px;
+}
+.cc .forget-pass
+{
+    display: flex;
+    justify-content: space-between;
+    font-size: 14.5px;
+    margin: -15px 0 15px;
+}
+
+.forget-pass label input
+{
+  margin-right: 3px;
+  accent-color :#fff;
+
+}
+.forget-pass a
+{
+    color: #54A9BE;
+    text-decoration: none;
+
+}
+.forget-pass a:hover
+{
+    text-decoration: underline;
+
+}
+
+.cc .btn
+{
+    width: 100%;
+    height: 45px;
+    background: #2DABCA;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    cursor: pointer;
+    font-size: 16px;
+    color: #fff;
+    font-weight: 600;
+}
+
+.cc .register-link
+{
+    font-size: 14.5px;
+    text-align: center;
+    margin: 20px 0 15px ;
+}
+
+.register-link p a
+{
+    color: #54A9BE;
+    text-decoration: none;
+    font-weight: 600;
+
+}
+
+.register-link p a:hover
+{
+    text-decoration: underline;
+}

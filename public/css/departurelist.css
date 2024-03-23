@@ -1,0 +1,50 @@
+body{
+    /* margin: 0;
+    padding: 0; */
+    background-image: url(Slice1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+h2{
+    font-size:38px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #195E82;
+    /* margin-bottom: 50px; */
+    margin: 60px 0px 60px 30px;
+}
+table{
+    
+    width: 100%;
+    border-spacing: 2px;
+    font-size: 23px;
+    /* border-collapse: collapse; */
+    align-items: center;
+    /* margin: 0px 20px 0px 20px; */
+    margin-top: 20px;
+}
+th{
+    background-color: #509AC0;
+    color: #fff;
+    height: 40px;
+    padding: 10px;
+    width: 40px;
+}
+td{
+    background-color: #E5E5E5;
+    height: 40px;
+    text-align: center;
+    color: #195E82;
+    padding: 10px;
+    width: 35px;
+}
+button a{
+    text-decoration: none;
+    font-size: 20px;
+    color: #15455f;
+}
+button{
+    background: #f0efefe8;
+    border-radius: 5px;
+    padding: 7px;
+    border: 1px double #195E82;
+}
