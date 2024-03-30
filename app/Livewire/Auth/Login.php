@@ -23,6 +23,13 @@ class Login extends Component
             'email' => $this->email,
             'password' => $this->password,
         ], $this->remmeberMe)) {
+            if (auth()->user()->admin) {
+                return redirect()->intended(route('filament.admin.pages.dashboard'));
+            }
+            if (auth()->user()->company) {
+                return redirect()->intended(route('filament.company.pages.dashboard'));
+            }
+
             return redirect()->intended(route('app.home'));
         }
 

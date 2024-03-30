@@ -14,7 +14,7 @@
             <nav class="menu">
                 <ul>
                     <li><a href="#">Home</a></li>
-                    <li><a href="{{ route('app.Searchtrip') }}">Search Trip</a></li>
+                    <li><a href="#">Search Trip</a></li>
                     <li><a href="#">About Us</a></li>
                     <li><a href="#">Contact Us</a></li>
                 </ul>
@@ -96,9 +96,7 @@
                     <h2>Companies</h2>
                     <p>View recent COMPANIES </p>
                 </div>
-
                 </nav>
-
                 <div class="view">
                     <a href="#"> <button type="submit" class="btn1">View all</button></a>
                  </div>
@@ -172,7 +170,7 @@
 
 
                 <div class="viewww">
-                    <a href="busticket.html"> <button type="submit" class="btn3">Go & search</button></a>
+                    <a href="#"> <button type="submit" class="btn3">Go & search</button></a>
                  </div>
 
 

@@ -10,11 +10,12 @@ class Register extends Component
     #[Validate('required')]
     public $name;
 
-    #[Validate('required|email|unique:users,email')]
+    #[Validate('required|email|min:8|max:25|ends_with:@gmail.com|unique:users,email')]
     public $email;
 
-    #[Validate('required')]
+    #[Validate('required|min:8|max:25')]
     public $password;
+
 
     #[Validate('required|same:password')]
     public $confirmPassword;

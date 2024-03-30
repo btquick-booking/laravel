@@ -11,10 +11,19 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class Company extends Model
 {
     use HasFactory;
-    public function Admin():BelongsTo
+
+    protected $fillable = [
+        'Company_Name',
+        'Company_Director',
+        'phone_number',
+        'user_id',
+    ];
+
+    public function user()
     {
-        return $this->belongsTo(Admin::class);
+        return $this->belongsTo(User::class);
     }
+
     public function Trip():HasMany
     {
         return $this->hasMany(Trip::class);

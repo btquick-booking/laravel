@@ -1,8 +1,9 @@
 <?php
 
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
+use App\Models\User;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
 
 return new class extends Migration
 {
@@ -14,8 +15,13 @@ return new class extends Migration
         Schema::create('companies', function (Blueprint $table) {
             $table->id();
           //  $table->foreignId('trip_id');
-
-            $table->foreignId('admin_id')->constrained('admins');
+            $table->string('Company_Name');
+            $table->string ('Company_Director');
+            $table->integer('phone_number');
+            $table->foreignIdFor(User::class)
+                ->constrained()
+                ->cascadeOnDelete()
+                ->cascadeOnUpdate();
             $table->timestamps();
         });
     }

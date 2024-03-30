@@ -147,7 +147,7 @@ h3
 
     float: left;
     margin-top: -18px;
-   /*margin-left: 700px;*/
+   margin-left: 700px;
 }
 
 .btn{
@@ -440,8 +440,8 @@ header .content
 .view
 {
 
-    float: left;
-    margin-top: -18px;
+    /* float: left;
+    margin-top: -18px; */
 }
 
 
@@ -456,9 +456,9 @@ header .content
     display: inline-block;
 
 
-    margin-left: 800px;
-    float: left ;
-    margin-top: -15px;
+   margin-left: 1013px;
+   /* float: left ;
+    margin-top: -15px;*/
 
 }
 
@@ -556,7 +556,7 @@ header .content
 
 .vieww
 {
-    /*margin-left: 700px;*/
+    margin-left: 700px;
     float: left;
     margin-top: -18px;
 }
@@ -685,7 +685,7 @@ header .content
     margin-left: 89px;
 
 
-    /* margin-left: -650px;
+     /* margin-left: -650px;
     float: left ;
     margin-top: 52px; */
 
