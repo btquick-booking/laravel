@@ -9,6 +9,13 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Bus extends Model
 {
+    protected $fillable = [
+       'Code',
+       'Seat_Capacity',
+       'Status',
+       'trip_id',
+
+     ];
     use HasFactory;
     public function Trip():BelongsTo
     {

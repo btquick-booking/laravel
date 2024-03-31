@@ -14,13 +14,13 @@
             <nav class="menu">
                 <ul>
                     <li><a href="#">Home</a></li>
-                    <li><a href="#">Search Trip</a></li>
+                    <li><a href="{{ route('app.Search') }}">Search Trip</a></li>
                     <li><a href="#">About Us</a></li>
                     <li><a href="#">Contact Us</a></li>
                 </ul>
                 <div class="login">
                     @if (auth()->check())
-                        <a href="{{ route('app.login') }}"> <button type="submit" class="btn">Login</button></a>
+                        <a href="{{ route('app.departurelist') }}"> <button type="submit" class="btn">Login</button></a>
 @else
 <a href="{{ route('app.login') }}"> <button type="submit" class="btn">Login</button></a>
                         @endif
@@ -170,7 +170,7 @@
 
 
                 <div class="viewww">
-                    <a href="#"> <button type="submit" class="btn3">Go & search</button></a>
+                    <a href="{{ route('app.Search') }}"> <button type="submit" class="btn3">Go & search</button></a>
                  </div>
 
 

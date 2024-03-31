@@ -24,7 +24,7 @@ class Company extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function Trip():HasMany
+    public function trips():HasMany
     {
         return $this->hasMany(Trip::class);
     }

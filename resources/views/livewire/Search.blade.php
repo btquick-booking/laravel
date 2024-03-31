@@ -1,6 +1,13 @@
+<div>
 
+    <x-slot:css>
+        <link rel="stylesheet" href="{{asset('css/Search.css')}}">
+    </x-slot:css>
 
-     <nav>.</nav>
+    <x-slot:title>
+        Search
+    </x-slot:title>
+    <nav>.</nav>
 
     <div>
         <nav class="menu">
@@ -16,39 +23,38 @@
 
 
         <br>
-        <form action="departurelist2.html" method="POST">
+        <form action="{{ route('app.departurelist') }}">
            <div class="sta">
             <input id="status" type="radio" name="tripstatus"><label  class="T_S" for="status">One Way</label>
             <input id="statuss" type="radio" name="tripstatus"><label class="T_S" for="statuss">Round-Trip</label>
            </div>
-            <!-- <br>
-            <br>
-            <br> -->
 
             <select name="origin" id="" required>
                 <option value="">Origin</option>
-                 <option value="">damascus</option>
-                 <option value="">Allepo</option>
+                 <option value="damascus">damascus</option>
+                 <option value="Allepo">Allepo</option>
             </select>
 
-            <select name="Destination" id="" required>
+            <select name="destination" id="" required>
               <option value="">destination</option>
-               <option value="">damascus</option>
-               <option value="">Allepo</option>
+               <option value="damascus">damascus</option>
+               <option value="Allepo">Allepo</option>
           </select>
           <br>
           <br>
           <br>
-          <input id="T_D" type="date" placeholder="Trip date" >
+          <input id="T_D" name="date" type="date" placeholder="Trip date" >
 
 
           <select name="companies" id="">
               <option value="">Company</option>
-               <option value="">Tarwada</option>
-               <option value="">alqadmous</option>
+               <option value="Tarwada">Tarwada</option>
+               <option value="alqadmous">alqadmous</option>
           </select>
           <br><br>
-         <button type="submit">Search</button>
+          <button type="submit">Search</button>
         </form>
     </div>
 
+
+</div>

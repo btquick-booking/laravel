@@ -15,7 +15,7 @@ class CompanySeeder extends Seeder
     public function run(): void
     {
         User::factory(5)
-        ->hasCompany()
+        ->has(Company::factory()->hasTrips(5))
         ->create();
     }
 }
