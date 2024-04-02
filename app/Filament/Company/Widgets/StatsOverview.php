@@ -28,6 +28,8 @@ class StatsOverview extends BaseWidget
            ->descriptionIcon('heroicon-m-arrow-trending-down')
            ->color('danger')
            ->chart([7 ,3 ,4 ,5 ,6 ,3 ,5 , 3]),
+
+
            Stat::make('Total Buses',Bus::count())
            ->description('Increase in Buses')
            ->descriptionIcon('heroicon-m-arrow-trending-up')
