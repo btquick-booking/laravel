@@ -18,8 +18,7 @@ return new class extends Migration
             $table->string('Gender');
             $table->integer('ID_Number');
             $table->integer('Seat_Number');
-            $table->string('email')->unique();
-            $table->string('password');
+         
             $table->string('Message');
 
             $table->timestamps();

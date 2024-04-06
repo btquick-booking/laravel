@@ -15,10 +15,15 @@ class Customer extends Model
        'Gender',
        'ID_Number',
        'Seat_Number',
-       'email',
-       'password',
+      
        'Message',
     ];
+
+    public function trips()
+       {
+           return $this->belongsToMany(Trip::class, 'books');
+       }
+
   public function Book():HasMany
   {
       return $this->hasMany(Book::class);

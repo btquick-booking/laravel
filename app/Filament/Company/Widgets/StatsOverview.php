@@ -20,7 +20,7 @@ class StatsOverview extends BaseWidget
         return [
            Stat::make('Total Customer',Customer::count())
            ->description('Increase in Customers')
-           ->descriptionIcon('heroicon-m-arrow-trending-up')
+           ->descriptionIcon('heroicon-o-user-group')
            ->color('success')
            ->chart([7 ,3 ,4 ,5 ,6 ,3 ,5 , 3]),
            Stat::make('Total Trips',Trip::count())

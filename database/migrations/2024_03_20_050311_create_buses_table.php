@@ -16,7 +16,7 @@ return new class extends Migration
             $table->integer('Code');
             $table->integer('Seat_Capacity');
             $table->boolean('Status');
-            $table->foreignId('trip_id')->constrained('trips');
+            $table->foreignId('Company_id')->constrained('companies');
             $table->timestamps();
         });
     }

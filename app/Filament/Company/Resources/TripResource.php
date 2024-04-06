@@ -18,6 +18,7 @@ class TripResource extends Resource
     protected static ?string $model = Trip::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationGroup = 'System Management';
 
     public static function form(Form $form): Form
     {
@@ -44,10 +45,17 @@ class TripResource extends Resource
                 Forms\Components\TextInput::make('Trip_price')
                     ->required()
                     ->numeric(),
-                Forms\Components\Select::make('company_id')
-                    ->relationship('company', 'id')
-                    ->required(),
+                Forms\Components\Hidden::make('company_id')->default(auth()->user()->company->id),
+                // Forms\Components\Select::make('company_id')
+                //     ->relationship('company', 'id')
+                //     ->required(),
+
             ]);
+    }
+
+    public static function getEloquentQuery(): Builder
+    {
+        return parent::getEloquentQuery()->where('company_id', auth()->user()->company->id);
     }
 
     public static function table(Table $table): Table

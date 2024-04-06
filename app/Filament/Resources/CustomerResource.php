@@ -18,6 +18,7 @@ class CustomerResource extends Resource
     protected static ?string $model = Customer::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationGroup = 'System Management';
 
     public static function form(Form $form): Form
     {
@@ -43,9 +44,11 @@ class CustomerResource extends Resource
                     ->required(),
                 Forms\Components\TextInput::make('Message')
                     ->required(),
-                
+
             ]);
     }
+
+
 
     public static function table(Table $table): Table
     {

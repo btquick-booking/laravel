@@ -18,6 +18,7 @@ class CustomerResource extends Resource
     protected static ?string $model = Customer::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationGroup = 'System Management';
 
     public static function form(Form $form): Form
     {
@@ -35,17 +36,25 @@ class CustomerResource extends Resource
                 Forms\Components\TextInput::make('Seat_Number')
                     ->required()
                     ->numeric(),
-                Forms\Components\TextInput::make('email')
-                    ->email()
-                    ->required(),
-                Forms\Components\TextInput::make('password')
-                    ->password()
-                    ->required(),
+                // Forms\Components\TextInput::make('email')
+                //     ->email()
+                //     ->required(),
+                // Forms\Components\TextInput::make('password')
+                //     ->password()
+                //     ->required(),
                 Forms\Components\TextInput::make('Message')
                     ->required(),
-                    
+                    Forms\Components\Select::make('trip_id')
+                    ->relationship('trips', 'Starting_place')
+                    ->required(),
+        ]);
 
-            ]);
+
+    }
+
+    public static function getEloquentQuery(): Builder
+    {
+        return parent::getEloquentQuery()->whereHas('trips', fn ($q) => $q->where('company_id', auth()->user()->company->id));
     }
 
     public static function table(Table $table): Table
@@ -64,9 +73,9 @@ class CustomerResource extends Resource
                     ->sortable(),
                 Tables\Columns\TextColumn::make('Seat_Number')
                     ->numeric()
-                    ->sortable(),
-                Tables\Columns\TextColumn::make('email')
-                    ->searchable(),
+                      ->sortable(),
+            //   Tables\Columns\TextColumn::make('email')
+            //         ->searchable(),
                 Tables\Columns\TextColumn::make('Message')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('created_at')

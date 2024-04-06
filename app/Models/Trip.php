@@ -21,19 +21,20 @@ class Trip extends Model
         'Number_of_seat',
         'Details',
         'Trip_price',
-
-
+        'company_id',
        ];
+
+       public function customers()
+       {
+           return $this->belongsToMany(Customer::class, 'books');
+       }
 
     public function Company():BelongsTo
     {
         return $this->belongsTo(Company::class);
     }
 
-    public function Bus():HasOne
-    {
-        return $this->hasOne(Bus::class);
-    }
+
     public function Book():HasMany
     {
         return $this->hasMany(Book::class);

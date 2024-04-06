@@ -22,7 +22,11 @@ class SearchRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'status' => ['nullable'],
+            'origin' => ['nullable'],
+            'destination' => ['nullable'],
+            'company' => ['nullable'],
+            'date' => ['nullable'],
         ];
     }
 }

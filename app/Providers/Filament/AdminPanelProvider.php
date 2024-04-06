@@ -28,11 +28,14 @@ class AdminPanelProvider extends PanelProvider
 
             ->path('admin')
             ->profile()
+
             // ->login()
 
             ->colors([
                 'primary' =>'#674cc4',
             ])
+            ->brandLogo(asset('images/logoBus-removebg-preview.png'),)
+            ->brandLogoHeight('7rem')
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
             ->pages([
@@ -43,6 +46,12 @@ class AdminPanelProvider extends PanelProvider
                // Widgets\AccountWidget::class,
                // Widgets\FilamentInfoWidget::class,
             ])
+            ->navigationGroups(
+                [
+                    'system management',
+                ])
+
+
             ->middleware([
                 EncryptCookies::class,
                 AddQueuedCookiesToResponse::class,

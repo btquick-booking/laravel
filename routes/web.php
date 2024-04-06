@@ -5,9 +5,11 @@ use App\Livewire\Auth\Login;
 
 use App\Livewire\Auth\Register;
 use Illuminate\Support\Facades\Route;
-
+use Spatie\Valuestore\Valuestore;
 
 Route::get('/', function () {
+    $valuestore = Valuestore::make('visit.json');
+    $valuestore->increment('visit');
     return view('home');
 })->name('app.home');
 

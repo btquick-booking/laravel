@@ -29,6 +29,8 @@ class CompanyPanelProvider extends PanelProvider
             ->colors([
                 'primary' => '#674cc4',
             ])
+            ->brandLogo(asset('images/logoBus-removebg-preview.png'),)
+            ->brandLogoHeight('7rem')
            // ->font('Poppins')
             ->discoverResources(in: app_path('Filament/Company/Resources'), for: 'App\\Filament\\Company\\Resources')
             ->discoverPages(in: app_path('Filament/Company/Pages'), for: 'App\\Filament\\Company\\Pages')
@@ -40,6 +42,12 @@ class CompanyPanelProvider extends PanelProvider
                // Widgets\AccountWidget::class,
                // Widgets\FilamentInfoWidget::class,
             ])
+->navigationGroups(
+    [
+        'system management',
+    ]
+)
+
             ->middleware([
                 EncryptCookies::class,
                 AddQueuedCookiesToResponse::class,

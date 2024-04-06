@@ -24,7 +24,7 @@ protected static string $color = 'info';
     return [
         'datasets' => [
             [
-                'label' => 'User visit',
+                'label' => 'Users',
                 'data' => $data->map(fn (TrendValue $value) => $value->aggregate),
             ],
         ],

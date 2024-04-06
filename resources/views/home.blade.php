@@ -20,7 +20,7 @@
                 </ul>
                 <div class="login">
                     @if (auth()->check())
-                        <a href="{{ route('app.departurelist') }}"> <button type="submit" class="btn">Login</button></a>
+                        <a href="{{ route('app.login') }}"> <button type="submit" class="btn">Login</button></a>
 @else
 <a href="{{ route('app.login') }}"> <button type="submit" class="btn">Login</button></a>
                         @endif

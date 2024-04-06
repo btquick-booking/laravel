@@ -18,6 +18,7 @@ class TripResource extends Resource
     protected static ?string $model = Trip::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationGroup = 'System Management';
 
     public static function form(Form $form): Form
     {
@@ -44,9 +45,10 @@ class TripResource extends Resource
                 Forms\Components\TextInput::make('Trip_price')
                     ->required()
                     ->numeric(),
-                Forms\Components\Select::make('company_id')
+                    Forms\Components\Select::make('company_id')
                     ->relationship('company', 'id')
                     ->required(),
+
             ]);
     }
 
@@ -61,17 +63,16 @@ class TripResource extends Resource
                 Tables\Columns\TextColumn::make('date')
                     ->date()
                     ->sortable(),
-                Tables\Columns\TextColumn::make('starting_time'),
-                Tables\Columns\TextColumn::make('Access_time'),
+                Tables\Columns\TextColumn::make('starting_time')
+                ->time(),
+                Tables\Columns\TextColumn::make('Access_time')
+                ->time(),
                 Tables\Columns\TextColumn::make('Driver_name')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('Number_of_seat')
                     ->numeric()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('Trip_price')
-                    ->numeric()
-                    ->sortable(),
-                Tables\Columns\TextColumn::make('company.id')
                     ->numeric()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('created_at')

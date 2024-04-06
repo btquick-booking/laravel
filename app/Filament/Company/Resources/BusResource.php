@@ -18,6 +18,7 @@ class BusResource extends Resource
     protected static ?string $model = Bus::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationGroup = 'System Management';
 
     public static function form(Form $form): Form
     {
@@ -31,9 +32,11 @@ class BusResource extends Resource
                     ->numeric(),
                 Forms\Components\Toggle::make('Status')
                     ->required(),
-                Forms\Components\Select::make('trip_id')
-                    ->relationship('trip', 'id')
-                    ->required(),
+
+                    Forms\Components\Hidden::make('company_id')->default(auth()->user()->company->id),
+                    Forms\Components\Select::make('company_id')
+                        ->relationship('company', 'id')
+                        ->required(),
             ]);
     }
 

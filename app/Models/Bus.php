@@ -13,13 +13,13 @@ class Bus extends Model
        'Code',
        'Seat_Capacity',
        'Status',
-       'trip_id',
+       'Company_id',
 
      ];
     use HasFactory;
-    public function Trip():BelongsTo
+    public function Company():BelongsTo
     {
-        return $this->belongsTo(Trip::class);
+        return $this->belongsTo(Company::class);
     }
     public function Profile():HasMany
     {
