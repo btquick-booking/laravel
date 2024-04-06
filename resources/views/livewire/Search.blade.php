@@ -12,7 +12,7 @@
     <div>
         <nav class="menu">
             <ul>
-                <li><a href="#">Home</a></li>
+                <li><a href="{{ route('app.home') }}">Home</a></li>
 
                 <li><a href="#">About Us</a></li>
                 <li><a href="#">Contact Us</a></li>
@@ -32,13 +32,13 @@
             <select name="origin" id="">
                 <option value="">Origin</option>
                  <option value="damascus">damascus</option>
-                 <option value="Allepo">Allepo</option>
+                 <option value="Aleppo">Allepo</option>
             </select>
 
             <select name="destination" id="" >
               <option value="">destination</option>
                <option value="damascus">damascus</option>
-               <option value="Allepo">Allepo</option>
+               <option value="Aleppo">Allepo</option>
           </select>
           <br>
           <br>

@@ -12,6 +12,9 @@
     <nav>
         <h2>Departure List</h2>
       </nav>
+
+      @foreach ($data as $trip)
+
       <table >
           <tr>
           <th>Origin</th>
@@ -21,7 +24,7 @@
           <th>Price</th>
           <th>Action</th>
           </tr>
-          @foreach ($data as $trip)
+
             <tr>
                 <td>{{ $trip->Starting_place }}</td>
                 <td>{{ $trip->Destination_place }}</td>
@@ -30,8 +33,11 @@
                 <td>{{ $trip->Trip_price }}sp</td>
                 <td><button ><a href="http:#">Details</a></button></td>
             </tr>
-          @endforeach
+
+
       </table>
+      <br>
+      @endforeach
       <br>
 
  </div>

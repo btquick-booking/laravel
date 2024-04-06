@@ -33,10 +33,10 @@ class BusResource extends Resource
                 Forms\Components\Toggle::make('Status')
                     ->required(),
 
-                    Forms\Components\Hidden::make('company_id')->default(auth()->user()->company->id),
-                    Forms\Components\Select::make('company_id')
-                        ->relationship('company', 'id')
-                        ->required(),
+                    Forms\Components\Hidden::make('Company_id')->default(auth()->user()->company->id),
+                    // Forms\Components\Select::make('company_id')
+                    //     ->relationship('company', 'id')
+                    //     ->required(),
             ]);
     }
 
