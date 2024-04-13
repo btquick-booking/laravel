@@ -31,14 +31,51 @@
 
             <select name="origin" id="">
                 <option value="">Origin</option>
-                 <option value="damascus">damascus</option>
-                 <option value="Aleppo">Allepo</option>
+                @foreach ([
+                    'Damascus' => 'Damascus',
+                    'Homs' => 'Homs',
+                    'Daraa' => 'Daraa',
+                    'Latakia' => 'Latakia',
+                    'Aleppo' => 'Aleppo',
+                    'Hama' => 'Hama',
+                    'Tartous' => 'Tartous',
+                    'Quneitra' => 'Quneitra',
+                    'Tadmur' => 'Tadmur',
+                    'Al-Hasakah' => 'Al-Hasakah',
+                    'As-Suwayda' => 'As-Suwayda',
+                    'Deir ez-Zor' => 'Deir ez-Zor',
+                    'Idlib' => 'Idlib',
+                    'Rif Dimashq' => 'Rif Dimashq',
+                    'Ar-Raqqah' => 'Ar-Raqqah',
+                ] as $key=> $item)
+
+<option value="{{$key}}">{{$item}}</option>
+                @endforeach
             </select>
 
             <select name="destination" id="" >
               <option value="">destination</option>
-               <option value="damascus">damascus</option>
-               <option value="Aleppo">Allepo</option>
+              @foreach ([
+                'Damascus' => 'Damascus',
+                'Homs' => 'Homs',
+                'Daraa' => 'Daraa',
+                'Latakia' => 'Latakia',
+                'Aleppo' => 'Aleppo',
+                'Hama' => 'Hama',
+                'Tartous' => 'Tartous',
+                'Quneitra' => 'Quneitra',
+                'Tadmur' => 'Tadmur',
+                'Al-Hasakah' => 'Al-Hasakah',
+                'As-Suwayda' => 'As-Suwayda',
+                'Deir ez-Zor' => 'Deir ez-Zor',
+                'Idlib' => 'Idlib',
+                'Rif Dimashq' => 'Rif Dimashq',
+                'Ar-Raqqah' => 'Ar-Raqqah',
+            ] as $key=> $item)
+
+          <option value="{{$key}}">{{$item}}</option>
+            @endforeach
+
           </select>
           <br>
           <br>
@@ -48,8 +85,10 @@
 
           <select name="company" id="">
               <option value="">Company</option>
-               <option value="Tarwada">Tarwada</option>
-               <option value="alqadmous">alqadmous</option>
+              @foreach (  $companies   as  $key=> $item)
+               <option value="{{$key}}">{{$item}}</option>
+               @endforeach
+
           </select>
           <br><br>
           <button type="submit">Search</button>

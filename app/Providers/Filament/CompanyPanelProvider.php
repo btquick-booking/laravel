@@ -26,6 +26,8 @@ class CompanyPanelProvider extends PanelProvider
             ->id('company')
             ->path('company')
             ->profile()
+            ->databaseNotifications()
+            ->databaseNotificationsPolling('30s')
             ->colors([
                 'primary' => '#674cc4',
             ])

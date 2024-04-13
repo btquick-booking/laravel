@@ -5,6 +5,7 @@ namespace App\Livewire;
 use App\Http\Requests\SearchRequest;
 use App\Models\Trip;
 use Livewire\Component;
+use Livewire\WithPagination;
 
 class Departurelist extends Component
 {
@@ -31,7 +32,7 @@ class Departurelist extends Component
         ->when($this->destination, fn ($query) => $query->where('Destination_place', $this->destination))
         ->when($this->company, fn ($query) => $query->where('company_id', $this->company))
         ->when($this->date, fn ($query) => $query->where('date', $this->date))
-        ->paginate();
+        ->get();
 
         return view('livewire.departurelist', compact('data'));
     }

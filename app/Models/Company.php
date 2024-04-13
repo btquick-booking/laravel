@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-
+use Illuminate\Database\Eloquent\Relations\HasManyThrough;
 
 class Company extends Model
 {
@@ -25,9 +25,9 @@ class Company extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function trips():HasMany
+    public function trips():HasManyThrough
     {
-        return $this->hasMany(Trip::class);
+        return $this->hasManyThrough(Trip::class ,Bus::class);
     }
     public function Bus():HasOne
     {

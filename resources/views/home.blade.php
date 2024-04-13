@@ -16,7 +16,7 @@
                     <li><a href="#">Home</a></li>
                     <li><a href="{{ route('app.Search') }}">Search Trip</a></li>
                     <li><a href="#">About Us</a></li>
-                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="{{ route('app.contactus') }}">Contact Us</a></li>
                 </ul>
                 <div class="login">
                     @if (auth()->check())

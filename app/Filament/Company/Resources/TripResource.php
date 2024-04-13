@@ -24,9 +24,43 @@ class TripResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('Starting_place')
+                Forms\Components\Select::make('Starting_place')
+                ->options([
+                    'Damascus' => 'Damascus',
+                    'Homs' => 'Homs',
+                    'Daraa' => 'Daraa',
+                    'Latakia' => 'Latakia',
+                    'Aleppo' => 'Aleppo',
+                    'Hama' => 'Hama',
+                    'Tartous' => 'Tartous',
+                    'Quneitra' => 'Quneitra',
+                    'Tadmur' => 'Tadmur',
+                    'Al-Hasakah' => 'Al-Hasakah',
+                    'As-Suwayda' => 'As-Suwayda',
+                    'Deir ez-Zor' => 'Deir ez-Zor',
+                    'Idlib' => 'Idlib',
+                    'Rif Dimashq' => 'Rif Dimashq',
+                    'Ar-Raqqah' => 'Ar-Raqqah',
+                ])
                     ->required(),
-                Forms\Components\TextInput::make('Destination_place')
+                Forms\Components\Select::make('Destination_place')
+                ->options([
+                    'Damascus' => 'Damascus',
+                    'Homs' => 'Homs',
+                    'Daraa' => 'Daraa',
+                    'Latakia' => 'Latakia',
+                    'Aleppo' => 'Aleppo',
+                    'Hama' => 'Hama',
+                    'Tartous' => 'Tartous',
+                    'Quneitra' => 'Quneitra',
+                    'Tadmur' => 'Tadmur',
+                    'Al-Hasakah' => 'Al-Hasakah',
+                    'As-Suwayda' => 'As-Suwayda',
+                    'Deir ez-Zor' => 'Deir ez-Zor',
+                    'Idlib' => 'Idlib',
+                    'Rif Dimashq' => 'Rif Dimashq',
+                    'Ar-Raqqah' => 'Ar-Raqqah',
+                ])
                     ->required(),
                 Forms\Components\DatePicker::make('date')
                     ->required(),
@@ -45,17 +79,17 @@ class TripResource extends Resource
                 Forms\Components\TextInput::make('Trip_price')
                     ->required()
                     ->numeric(),
-                Forms\Components\Hidden::make('company_id')->default(auth()->user()->company->id),
-                // Forms\Components\Select::make('company_id')
-                //     ->relationship('company', 'id')
-                //     ->required(),
+      //          Forms\Components\Hidden::make('company_id')->default(auth()->user()->company->id),
+                Forms\Components\Select::make('bus_id')
+                    ->relationship('bus', 'Code',fn ($query) => $query->where('company_id', auth()->user()->company->id))
+                    ->required(),
 
             ]);
     }
 
     public static function getEloquentQuery(): Builder
     {
-        return parent::getEloquentQuery()->where('company_id', auth()->user()->company->id);
+        return parent::getEloquentQuery()->whereHas('bus', fn ($q) => $q->where('company_id', auth()->user()->company->id));
     }
 
     public static function table(Table $table): Table
@@ -79,7 +113,7 @@ class TripResource extends Resource
                 Tables\Columns\TextColumn::make('Trip_price')
                     ->numeric()
                     ->sortable(),
-                Tables\Columns\TextColumn::make('company.id')
+                Tables\Columns\TextColumn::make('bus.Code')
                     ->numeric()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('created_at')

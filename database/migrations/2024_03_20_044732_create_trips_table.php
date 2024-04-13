@@ -20,9 +20,9 @@ return new class extends Migration
             $table->time('Access_time');
             $table->string('Driver_name');
             $table->integer('Number_of_seat');
-            $table->text('Details');
             $table->integer('Trip_price');
-            $table->foreignId('company_id')->constrained('companies');
+            $table->text('Details');
+            $table->foreignId('bus_id')->constrained('buses');
 
 
 

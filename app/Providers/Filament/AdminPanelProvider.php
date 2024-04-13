@@ -30,7 +30,8 @@ class AdminPanelProvider extends PanelProvider
             ->profile()
 
             // ->login()
-
+            ->databaseNotifications()
+            ->databaseNotificationsPolling('30s')
             ->colors([
                 'primary' =>'#674cc4',
             ])

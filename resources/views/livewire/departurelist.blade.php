@@ -31,7 +31,7 @@
                 <td>{{ $trip->date }} {{ $trip->starting_time }}</td>
                 <td>{{ $trip->Number_of_seat }}</td>
                 <td>{{ $trip->Trip_price }}sp</td>
-                <td><button ><a href="http:#">Details</a></button></td>
+                <td><button ><a href="{{ route('app.Tripdetails', ['trip' => $trip->id]) }}">Details</a></button></td>
             </tr>
 
 

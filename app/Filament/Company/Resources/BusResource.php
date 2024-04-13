@@ -52,7 +52,7 @@ class BusResource extends Resource
                     ->sortable(),
                 Tables\Columns\IconColumn::make('Status')
                     ->boolean(),
-                Tables\Columns\TextColumn::make('trip.id')
+                Tables\Columns\TextColumn::make('trip.Starting_place')
                     ->numeric()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('created_at')

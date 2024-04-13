@@ -1,0 +1,73 @@
+body{
+    background: url(../images/Slice3.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+}
+h2{
+       font-size: 60px;
+       text-shadow: 3px 3px 7px #ababab;
+       color: #13709a;
+       margin: 0px;
+       position: absolute;
+       top: -40px;
+}
+p{
+    font-size: 24px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    text-shadow: 1px 2px 7px #ababab;
+    color: #13709a;
+    position: relative;
+    top: 13px;
+}
+span{
+    color: #587787;
+    font-weight: 500;
+    font-size: 23px;
+}
+button{
+    font-size: 19px;
+    width: 141px;
+    height: 39px;
+    color: #fff;
+    border: none;
+    border-radius: 40px;
+    background: #2DABCA;
+    position: absolute;
+    /* left: 663px; */
+    right: 38px;
+    /* top: 48px; */
+    bottom: 43px;
+    background: #2DABCA;
+    border: none;
+    /* font-size: 14px; */
+    font-family: cursive;
+    border-radius: 40px;
+    cursor: pointer;
+    box-shadow: 0px 2px 10px #ababab;
+    transition: .4s ease;
+}
+button:hover{
+    background-color: #147ead;
+}
+
+.card-details{
+        background: transparent;
+        border: 2px solid rgba(255, 255, 255, .2);
+        backdrop-filter: blur(20px);
+        box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+        padding: 40px 39px 36px;
+        border-radius: 40px;
+        width: 739px;
+        height: 487px;
+        position: absolute;
+        left: 48px;
+        top: 87px;
+}
+.details{
+    position: absolute;
+    left: 410px;
+    top: 51px;
+    line-height: 31px;
+}

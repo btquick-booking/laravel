@@ -4,6 +4,8 @@ use App\Livewire\departurelist;
 use App\Livewire\Auth\Login;
 
 use App\Livewire\Auth\Register;
+use App\Livewire\ContactUs;
+use App\Livewire\Tripdetails;
 use Illuminate\Support\Facades\Route;
 use Spatie\Valuestore\Valuestore;
 
@@ -19,3 +21,5 @@ Route::get('/register',Register::class)->name('app.Register');
 
 Route::get('/Search',Search::class)->name('app.Search');
 Route::get('/departurelist',departurelist::class)->name('app.departurelist');
+Route::get('/contactus',ContactUs::class)->name('app.contactus');
+Route::get('/trip/{trip}',Tripdetails::class)->name('app.Tripdetails');
