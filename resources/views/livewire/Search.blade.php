@@ -86,7 +86,7 @@
           <select name="company" id="">
               <option value="">Company</option>
               @foreach (  $companies   as  $key=> $item)
-               <option value="{{$key}}">{{$item}}</option>
+               <option value="{{$key}}">{{$item ->Company_Name}}  </option>
                @endforeach
 
           </select>
