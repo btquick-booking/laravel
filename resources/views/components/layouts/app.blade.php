@@ -12,6 +12,9 @@
     <title>{{ $title }}</title>
 
     @livewireStyles
+
+    
+
 </head>
 <body>
 

@@ -1,7 +1,8 @@
 <div>
     <x-slot:css>
         <link rel="stylesheet" href="{{asset('css/Tripdetails.css')}}">
-    </x-slot:css>
+        <link rel="stylesheet" type="text/css" href="https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.25.0/maps/maps.css" />
+</x-slot:css>
 
     <x-slot:title>
         Tripdetails
@@ -23,4 +24,39 @@
             <button type="submit">Book now</button>
             </a>
       </div>
+
+      <div id="map" style="width: 100% ;height: 50vh" ></div>
+
+     <script src="https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.25.0/maps/maps-web.min.js"></script>
+        <script>
+            const map = tt.map({
+              key: "{{ config('tomtom.key') }}",
+              container: "map",
+              zoom: 8,
+            })
+
+
+            map.easeTo({
+                center: @js($startPlaceLatLng),
+                zoom: 8,
+                bearing: 0,
+                pitch: 0,
+                duration: 2000,
+            })
+            var marker = new tt.Marker()
+          .setLngLat( @js($startPlaceLatLng))
+         .addTo(map);
+
+
+         map.easeTo({
+                center: @js($DestinationplaceLatLng),
+                zoom: 8,
+                bearing: 0,
+                pitch: 0,
+                duration: 2000,
+            })
+            var marker = new tt.Marker()
+          .setLngLat( @js($DestinationplaceLatLng))
+         .addTo(map);
+          </script>
 </div>

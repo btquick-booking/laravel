@@ -18,14 +18,16 @@ class ContactUsResource extends Resource
     protected static ?string $model = ContactUs::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationLabel = 'Contact Us';
 
+    protected static ?string $pluralModelLabel = 'Contact Us';
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
                 Forms\Components\TextInput::make('name')
                 ->required(),
-            Forms\Components\TextInput::make('email')
+                Forms\Components\TextInput::make('email')
                 ->required(),
                 Forms\Components\TextInput::make('message')
                 ->required(),
@@ -38,7 +40,7 @@ class ContactUsResource extends Resource
             ->columns([
                 Tables\Columns\TextColumn::make('name')
                 ->searchable(),
-                Tables\Columns\TextColumn::make('user.email')
+                Tables\Columns\TextColumn::make('email')
                 ->numeric()
                 ->sortable(),
                 Tables\Columns\TextColumn::make('message')
