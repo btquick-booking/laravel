@@ -29,7 +29,7 @@ class CompanyPanelProvider extends PanelProvider
             ->databaseNotifications()
             ->databaseNotificationsPolling('30s')
             ->colors([
-                'primary' => '#674cc4',
+                'primary' => '#2DABCA',
             ])
             ->brandLogo(asset('images/logoBus-removebg-preview.png'),)
             ->brandLogoHeight('7rem')

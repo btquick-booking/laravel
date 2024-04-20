@@ -19,7 +19,7 @@ Route::get('/login',Login::class)->name('app.login');
 
 Route::get('/register',Register::class)->name('app.Register');
 
-Route::get('/Search',Search::class)->name('app.Search');
+Route::get('/Search',Search::class)->name('app.Search')->middleware('auth');
 Route::get('/departurelist',departurelist::class)->name('app.departurelist');
 Route::get('/contactus',ContactUs::class)->name('app.contactus');
 Route::get('/trip/{trip}',Tripdetails::class)->name('app.Tripdetails');

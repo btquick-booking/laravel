@@ -17,13 +17,16 @@ class CustomerResource extends Resource
 {
     protected static ?string $model = Customer::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
-    protected static ?string $navigationGroup = 'System Management';
+    protected static ?string $navigationIcon = 'heroicon-o-user-group';
+    protected static ?string $navigationGroup = 'Bus ticket';
 
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
+                Forms\Components\Section::make('Information Customer  ')
+
+                    ->schema([
                 Forms\Components\TextInput::make('Full_name')
                     ->required(),
                 Forms\Components\DatePicker::make('Birth_date')
@@ -44,7 +47,7 @@ class CustomerResource extends Resource
                     ->required(),
                 Forms\Components\TextInput::make('Message')
                     ->required(),
-
+                    ])
             ]);
     }
 
@@ -84,7 +87,7 @@ class CustomerResource extends Resource
                 //
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
+                Tables\Actions\ViewAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
@@ -104,8 +107,8 @@ class CustomerResource extends Resource
     {
         return [
             'index' => Pages\ListCustomers::route('/'),
-            'create' => Pages\CreateCustomer::route('/create'),
-            'edit' => Pages\EditCustomer::route('/{record}/edit'),
+            // 'create' => Pages\CreateCustomer::route('/create'),
+            // 'edit' => Pages\EditCustomer::route('/{record}/edit'),
         ];
     }
 }

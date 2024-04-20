@@ -13,7 +13,7 @@
 
     @livewireStyles
 
-    
+    @vite('resources/css/filament/admin/theme.css')
 
 </head>
 <body>

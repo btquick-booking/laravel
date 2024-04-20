@@ -33,4 +33,8 @@ class Company extends Model
     {
         return $this->hasOne(Bus::class);
     }
+    public function CompanyProfiles():HasOne
+    {
+        return $this->hasOne(CompanyProfile::class);
+    }
 }

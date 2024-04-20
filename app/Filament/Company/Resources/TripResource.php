@@ -4,6 +4,7 @@ namespace App\Filament\Company\Resources;
 
 use App\Filament\Company\Resources\TripResource\Pages;
 use App\Filament\Company\Resources\TripResource\RelationManagers;
+use App\Models\Bus;
 use App\Models\Trip;
 use Filament\Forms;
 use Filament\Forms\Form;
@@ -17,13 +18,16 @@ class TripResource extends Resource
 {
     protected static ?string $model = Trip::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-inbox';
     protected static ?string $navigationGroup = 'System Management';
 
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
+                Forms\Components\Section::make('Information Trip  ')
+
+                    ->schema([
                 Forms\Components\Select::make('Starting_place')
                 ->options([
                     'Damascus' => 'Damascus',
@@ -64,15 +68,18 @@ class TripResource extends Resource
                     ->required(),
                 Forms\Components\DatePicker::make('date')
                     ->required(),
-                Forms\Components\TextInput::make('starting_time')
+                Forms\Components\TimePicker::make('starting_time')
+                ->seconds(false)
                     ->required(),
-                Forms\Components\TextInput::make('Access_time')
-                    ->required(),
+                Forms\Components\TimePicker::make('Access_time')
+                ->seconds(false)
+                ->required(),
                 Forms\Components\TextInput::make('Driver_name')
                     ->required(),
-                Forms\Components\TextInput::make('Number_of_seat')
-                    ->required()
-                    ->numeric(),
+                // Forms\Components\TextInput::make('Number_of_seat')
+                // ->disabled()
+                //     ->required()
+                //     ->numeric(),
                 Forms\Components\Textarea::make('Details')
                     ->required()
                     ->columnSpanFull(),
@@ -81,9 +88,14 @@ class TripResource extends Resource
                     ->numeric(),
       //          Forms\Components\Hidden::make('company_id')->default(auth()->user()->company->id),
                 Forms\Components\Select::make('bus_id')
+                ->live()
+                ->afterStateUpdated(function (Forms\Set $set, $state){
+                    $bus = Bus::find($state);
+                    $set('Number_of_seat', $bus->Seat_Capacity);
+                })
                     ->relationship('bus', 'Code',fn ($query) => $query->where('company_id', auth()->user()->company->id))
                     ->required(),
-
+                    ])
             ]);
     }
 

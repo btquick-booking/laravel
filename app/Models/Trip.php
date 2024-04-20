@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use App\Models\Scopes\PassTripScope;
+use Illuminate\Database\Eloquent\Attributes\ScopedBy;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -18,11 +20,19 @@ class Trip extends Model
         'starting_time',
         'Access_time',
         'Driver_name',
-        'Number_of_seat',
+       // 'Number_of_seat',
         'Details',
         'Trip_price',
         'bus_id',
        ];
+
+       protected static function booted()
+       {
+        if (!auth()->user()?->company) {
+            static::addGlobalScope(PassTripScope::class);
+        }
+        // dump(now());
+       }
 
        public function customers()
        {
@@ -39,4 +49,5 @@ class Trip extends Model
     {
         return $this->hasMany(Book::class);
     }
+
 }

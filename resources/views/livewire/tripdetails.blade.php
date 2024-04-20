@@ -25,20 +25,20 @@
             </a>
       </div>
 
-      <div id="map" style="width: 100% ;height: 50vh" ></div>
+      <div id="map" style="width: 546px ;height: 70vh; " ></div>
 
      <script src="https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.25.0/maps/maps-web.min.js"></script>
         <script>
             const map = tt.map({
               key: "{{ config('tomtom.key') }}",
               container: "map",
-              zoom: 8,
+              zoom: 5,
             })
 
 
             map.easeTo({
                 center: @js($startPlaceLatLng),
-                zoom: 8,
+                zoom: 5,
                 bearing: 0,
                 pitch: 0,
                 duration: 2000,

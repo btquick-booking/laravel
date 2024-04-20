@@ -17,13 +17,16 @@ class CustomerResource extends Resource
 {
     protected static ?string $model = Customer::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-user-group';
     protected static ?string $navigationGroup = 'System Management';
 
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
+                Forms\Components\Section::make('Information Customer  ')
+
+                ->schema([
                 Forms\Components\TextInput::make('Full_name')
                     ->required(),
                 Forms\Components\DatePicker::make('Birth_date')
@@ -47,7 +50,7 @@ class CustomerResource extends Resource
                     Forms\Components\Select::make('trip_id')
                     ->relationship('trips', 'Starting_place')
                     ->required(),
-        ]);
+                 ])     ]);
 
 
     }

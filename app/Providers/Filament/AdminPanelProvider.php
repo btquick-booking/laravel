@@ -33,7 +33,7 @@ class AdminPanelProvider extends PanelProvider
             ->databaseNotifications()
             ->databaseNotificationsPolling('30s')
             ->colors([
-                'primary' =>'#674cc4',
+                'primary' =>'#2DABCA',
             ])
             ->brandLogo(asset('images/logoBus-removebg-preview.png'),)
             ->brandLogoHeight('7rem')
@@ -66,6 +66,7 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->authMiddleware([
                 Authenticate::class,
-            ])->spa();
+            ])->spa()
+            ->viteTheme('resources/css/filament/admin/theme.css');
     }
 }

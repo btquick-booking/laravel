@@ -17,13 +17,16 @@ class TripResource extends Resource
 {
     protected static ?string $model = Trip::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
-    protected static ?string $navigationGroup = 'System Management';
+    protected static ?string $navigationIcon = 'heroicon-o-inbox';
+    protected static ?string $navigationGroup = 'Bus ticket';
 
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
+                Forms\Components\Section::make('Information Trip  ')
+                  
+                    ->schema([
                 Forms\Components\TextInput::make('Starting_place')
                     ->required(),
                 Forms\Components\TextInput::make('Destination_place')
@@ -48,7 +51,7 @@ class TripResource extends Resource
                     Forms\Components\Select::make('company_id')
                     ->relationship('company', 'id')
                     ->required(),
-
+                    ])
             ]);
     }
 
@@ -88,7 +91,7 @@ class TripResource extends Resource
                 //
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
+                Tables\Actions\ViewAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
@@ -108,8 +111,8 @@ class TripResource extends Resource
     {
         return [
             'index' => Pages\ListTrips::route('/'),
-            'create' => Pages\CreateTrip::route('/create'),
-            'edit' => Pages\EditTrip::route('/{record}/edit'),
+           // 'create' => Pages\CreateTrip::route('/create'),
+           // 'edit' => Pages\EditTrip::route('/{record}/edit'),
         ];
     }
 }

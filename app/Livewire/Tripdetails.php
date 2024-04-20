@@ -22,7 +22,7 @@ class Tripdetails extends Component
     public function getLatLng($city){
         $cities =[
             'Damascus' =>     [36.2004942,33.5074482],
-'homs'      =>     [ 36.5946809,34.73027],
+'Homs'      =>     [ 36.5946809,34.73027],
 'Daraa'       =>    [ 36.0582501,32.622847],
 'Latakia'       =>  [ 35.6142887,35.5879472],
 'Aleppo'        =>  [37.0661839, 36.2064064],

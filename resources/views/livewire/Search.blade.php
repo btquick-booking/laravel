@@ -18,18 +18,18 @@
                 <li><a href="#">Contact Us</a></li>
             </ul>
         </nav>
-        <h2 id="h22">Booking Tickets</h2>
-        <h4>Search For Your Trip</h4>
+        <h2 class=" h22 text-[45px] text-['Segoe UI', Tahoma, Geneva, Verdana, sans-serif] text-[#195E82]  ml-[18px]  my-[0px]  mr-[30px] ">Booking Tickets</h2>
+        <h4 class=" h4  text-[28px] ml-[15px] my-[0px] mr-[30px]  text-[#195E82]" >Search For Your Trip</h4>
 
 
         <br>
         <form action="{{ route('app.departurelist') }}">
-           <div class="sta">
-            <input id="status" type="radio" name="status"><label  class="T_S" for="status">One Way</label>
-            <input id="statuss" type="radio" name="status"><label class="T_S" for="statuss">Round-Trip</label>
+           <div class="ml-[-7px] my-[0px] mr-[35px]">
+            {{-- <input id="status" type="radio" name="status"><label  class="T_S" for="status">One Way</label> --}}
+            {{-- <input id="statuss" type="radio" name="status"><label class="T_S" for="statuss">Round-Trip</label> --}}
            </div>
 
-            <select name="origin" id="">
+            <select name="origin" >
                 <option value="">Origin</option>
                 @foreach ([
                     'Damascus' => 'Damascus',
@@ -53,7 +53,7 @@
                 @endforeach
             </select>
 
-            <select name="destination" id="" >
+            <select name="destination"  >
               <option value="">destination</option>
               @foreach ([
                 'Damascus' => 'Damascus',
@@ -80,18 +80,23 @@
           <br>
           <br>
           <br>
-          <input id="T_D" name="date" type="date" placeholder="Trip date" >
+
+          <input class="T_D" name="date" type="date" placeholder="Trip date" >
 
 
-          <select name="company" id="">
+          <select name="company" >
               <option value="">Company</option>
               @foreach (  $companies   as  $key=> $item)
-               <option value="{{$key}}">{{$item ->Company_Name}}  </option>
+               <option value="{{$key}}">{{$item}}  </option>
                @endforeach
 
           </select>
+
+
+          <input class="T_D" name="min_price" type="number" placeholder="Min Price" >
+          <input class="T_D" name="max_price" type="number" placeholder="Max Price" >
           <br><br>
-          <button type="submit">Search</button>
+          <button type="submit"  >Search</button>
         </form>
     </div>
 

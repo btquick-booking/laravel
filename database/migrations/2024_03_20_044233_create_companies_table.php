@@ -17,7 +17,7 @@ return new class extends Migration
           //  $table->foreignId('trip_id');
             $table->string('Company_Name');
             $table->string ('Company_Director');
-            $table->integer('phone_number');
+            $table->string('phone_number');
             $table->foreignIdFor(User::class)
                 ->constrained()
                 ->cascadeOnDelete()

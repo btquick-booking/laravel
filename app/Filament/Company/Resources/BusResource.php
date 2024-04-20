@@ -80,8 +80,11 @@ class BusResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
-        ];
+     //       return parent::getEloquentQuery()->where('company_id', auth()->user()->company->id);
+
+            // return parent::getEloquentQuery()->where('company_id', [auth()->user()->company->id]);
+         ];
+
     }
 
     public static function getPages(): array

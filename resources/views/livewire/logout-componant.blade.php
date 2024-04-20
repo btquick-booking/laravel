@@ -1,5 +1,5 @@
 <div>
    <form  wire:submit.prevent="logout">
-    <button type="submit">logout</button>
+    <button type="submit"class="btn">logout</button>
 </form>
 </div>

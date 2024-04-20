@@ -16,7 +16,7 @@ class AdminSeeder extends Seeder
     {
       $user =  User::factory()->create([
             'email'=>'admin@gmail.com',
-            'password'=>'password',
+            // 'password'=>'password',
         ]);
 
         $user->admin()->create();
