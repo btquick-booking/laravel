@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    @vite('resources/css/filament/admin/theme.css')
+    {{-- @vite('resources/css/filament/admin/theme.css') --}}
     <link rel="stylesheet" href="{{ asset('css/home.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,14 +16,14 @@
     <header>
 
         <nav class="navbar">
-            <div class="flex justify-between items-center m-[0px 20px]">
+             <div id="navbar"  {{--class=" navbar flex justify-between items-center m-[0px 20px]"--}}>
             <img src="{{ asset('images/logoBus-removebg-preview.png') }}" alt="bus_logo">
             <nav class="menu">
                 <ul class="mt-[-4px] flex justify-center items-center">
-                    <li class="text-[15.5px] ml-[27px] mt-[17px] mr-[17px] mb-[2px]"><a href="#">Companies</a></li>
-                    <li class="text-[15.5px] ml-[27px] mt-[17px] mr-[17px] mb-[2px]"><a href="{{ route('app.Search') }}" >Search Trip</a></li>
-                    <li class="text-[15.5px] ml-[27px] mt-[17px] mr-[17px] mb-[2px]"><a href="#" >About Us</a></li>
-                    <li class="text-[15.5px] ml-[27px] mt-[17px] mr-[17px] mb-[2px]"><a href="{{ route('app.contactus') }}">Contact Us</a></li>
+                    <li class=" menuu text-[15.5px] ml-[27px] mt-[17px] mr-[17px] mb-[2px]"><a href="#">Companies</a></li>
+                    <li class=" menuu text-[15.5px] ml-[27px] mt-[17px] mr-[17px] mb-[2px]"><a href="{{ route('app.Search') }}" >Search Trip</a></li>
+                    <li class=" menuu text-[15.5px] ml-[27px] mt-[17px] mr-[17px] mb-[2px]"><a href="#" >About Us</a></li>
+                    <li class=" menuu text-[15.5px] ml-[27px] mt-[17px] mr-[17px] mb-[2px]"><a href="{{ route('app.contactus') }}">Contact Us</a></li>
                 </ul>
             </nav>
                 <div class="login">
@@ -112,9 +112,9 @@
                     <a href=""> <button type="submit" class="btn1 w-[100px] h-[40px] text-[#fff] text-[15px] bg-[#2DABCA]  inline-block font-[cursive]  cursor-pointer transition-all duration-[.4s] rounded-[40px]">View all</button></a>
 
                 </div>
-                <p class="text-[18px]  text-[#13709a] font-bold mb-[20px] drop-shadow-md  relative left-[8px] top-[14px] ">View Recent Companies </p>
+                <p class=" com text-[18px]  text-[#13709a] font-bold mb-[20px] drop-shadow-md  relative left-[8px] top-[14px] ">View Recent Companies </p>
 
-                <div class="flex justify-center mb-[57px]">
+                <div class=" cards flex justify-center mb-[57px]">
 
 
                     <div class="Containe">

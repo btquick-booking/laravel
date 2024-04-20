@@ -24,12 +24,12 @@
 
         <br>
         <form action="{{ route('app.departurelist') }}">
-           <div class="ml-[-7px] my-[0px] mr-[35px]">
+           <div class=" sta ml-[-7px] my-[0px] mr-[35px]">
             {{-- <input id="status" type="radio" name="status"><label  class="T_S" for="status">One Way</label> --}}
             {{-- <input id="statuss" type="radio" name="status"><label class="T_S" for="statuss">Round-Trip</label> --}}
            </div>
 
-            <select name="origin" >
+            <select name="origin"  class="select">
                 <option value="">Origin</option>
                 @foreach ([
                     'Damascus' => 'Damascus',
@@ -53,7 +53,7 @@
                 @endforeach
             </select>
 
-            <select name="destination"  >
+            <select name="destination" class="select" >
               <option value="">destination</option>
               @foreach ([
                 'Damascus' => 'Damascus',
@@ -84,7 +84,7 @@
           <input class="T_D" name="date" type="date" placeholder="Trip date" >
 
 
-          <select name="company" >
+          <select name="company" class="select">
               <option value="">Company</option>
               @foreach (  $companies   as  $key=> $item)
                <option value="{{$key}}">{{$item}}  </option>
@@ -93,8 +93,8 @@
           </select>
 
 
-          <input class="T_D" name="min_price" type="number" placeholder="Min Price" >
-          <input class="T_D" name="max_price" type="number" placeholder="Max Price" >
+          <input  name="min_price" type="number" placeholder="Min Price" >
+          <input  name="max_price" type="number" placeholder="Max Price" >
           <br><br>
           <button type="submit"  >Search</button>
         </form>

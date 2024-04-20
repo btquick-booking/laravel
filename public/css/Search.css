@@ -1,9 +1,9 @@
-/* .h22{
+.h22{
     font-size:45px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #195E82;
     margin: 18px 0px 30px 0px;
-} */
+}
 
 body{
     /* background:url(Slice3.png);
@@ -71,9 +71,9 @@ div{
     margin: 30px 0px 0px 30px;
 }
 
-/* .sta{
+.sta{
     margin: -7px 0px 35px 0px;
-} */
+}
 
 nav{
     color: #fff;
