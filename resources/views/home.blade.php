@@ -19,66 +19,9 @@
 <body>
     <x-home.navbar />
 
+
     <main>
-        <section id="about">
-            <div class="container">
-                <div class="title">
-                    <h1>Get Your Ticket With 3 Steps</h1>
-                    <p>get a ticket for your great journey. !</p>
-                </div>
-                <div class="about-content">
-
-                    <div class="cardd">
-
-                        <div class="search">
-
-                            <div class="scuare">
-                                <div class="scuare2">
-                                    <i class="fa fa-search"></i>
-                                </div>
-                            </div>
-                            <h3>Search Your Trip</h3>
-                            <p class="pa">choose your <br> origin,destination, <br> dates and search for <br> trip.
-                            </p>
-
-                        </div>
-                    </div>
-
-                    <div class="cardd">
-
-                        <div class="choose">
-
-                            <div class="scuare">
-                                <div class="scuare2">
-                                    <img src="" alt="">
-                                </div>
-                            </div>
-                            <h3>Choose Your Trip</h3>
-                            <p class="pa">After you <br>search for your trip, <br> choose the best trip <br> for
-                                you. </p>
-
-                        </div>
-                    </div>
-
-                    <div class="cardd">
-
-                        <div class="pay">
-
-                            <div class="scuare">
-                                <div class="scuare2">
-                                    <img src="logo" alt="">
-                                </div>
-                            </div>
-                            <h3 class="pay2">Pay for the trip</h3>
-                            <p class="pa">After you <br>choose, get your data to be packed and<br> then pay. </p>
-
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
-        </section>
+        <x-home.about />
 
         <section class="slide2">
 
