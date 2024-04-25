@@ -18,6 +18,7 @@
 
 <body>
     <x-home.navbar />
+
     <main>
         <section id="about">
             <div class="container">
@@ -247,50 +248,7 @@
 
     </main>
 
-
-
-    <footer>
-        <div class="column1">
-            <h2>TRAVEL IT</h2>
-            <P>A Website for organizing and managing trips and reservations <br> throughout Syria between customers and
-                transportation companies <br>
-                to facilitate the reservation process, save time, <br>and achieve a unique experience for users.</P>
-            <ul class="icons">
-                <a href=""><i class="fa-brands fa-facebook"></i></a>
-                <a href=""><i class="fa-brands fa-instagram"></i></a>
-                <a href=""><i class="fa-brands fa-twitter"></i></a>
-            </ul>
-        </div>
-        <div class="column2">
-            <h4 class="footer-col">Information</h4>
-            <ol style="list-style: none;">
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Customer Service</a></li>
-                <li><a href="#">Our Sitemap</a></li>
-                <li><a href="#">Terms &amp; Conditions</a></li>
-                <li><a href="#">Privacy Policy</a></li>
-                <!-- <li><a href="#">Delivery Information</a></li> -->
-            </ol>
-        </div>
-        <div class="column3">
-            <h4 class="footer-col">Contact Us</h4>
-            <ol style="list-style: none;">
-                <li>
-                    <p><i class="fas fa-map-marker-alt"></i>
-                        "Address: Damascus"
-                    </p>
-                </li>
-                <li>
-                    <p> <i class="fas fa-envelope"></i>
-                        Email:
-                        <a href="sedrashawish43@gmail.com">Travelit@gmail.com</a>
-                    </p>
-                </li>
-                <!-- <li></li> -->
-            </ol>
-        </div>
-    </footer>
-
+    <x-home.footer />
     @livewireScripts
 </body>
 
