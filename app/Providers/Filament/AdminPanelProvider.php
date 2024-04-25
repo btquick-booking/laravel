@@ -33,7 +33,7 @@ class AdminPanelProvider extends PanelProvider
             ->databaseNotifications()
             ->databaseNotificationsPolling('30s')
             ->colors([
-                'primary' =>'#674cc4',
+                'primary' => '#674cc4',
             ])
             ->brandLogo(asset('images/logoBus-removebg-preview.png'),)
             ->brandLogoHeight('7rem')
@@ -44,13 +44,14 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\\Filament\\Widgets')
             ->widgets([
-               // Widgets\AccountWidget::class,
-               // Widgets\FilamentInfoWidget::class,
+                // Widgets\AccountWidget::class,
+                // Widgets\FilamentInfoWidget::class,
             ])
             ->navigationGroups(
                 [
                     'system management',
-                ])
+                ]
+            )
 
 
             ->middleware([
@@ -66,6 +67,7 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->authMiddleware([
                 Authenticate::class,
-            ])->spa();
+            ])->spa()
+            ->viteTheme('resources/css/filament/admin/theme.css');
     }
 }
