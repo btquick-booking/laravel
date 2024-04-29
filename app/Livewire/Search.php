@@ -13,13 +13,12 @@ class Search extends Component
     {
 
         $this->Company = $request->company;
-
     }
     public function render()
     {
         $companies = Company::query()
-       // ->when($this->company, fn ($query) => $query->where('company_id', $this->company))
-        ->get();
-        return view('livewire.search', compact('companies'));
+            // ->when($this->company, fn ($query) => $query->where('company_id', $this->company))
+            ->get();
+        return view('livewire.Search', compact('companies'));
     }
 }
