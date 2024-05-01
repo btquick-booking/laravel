@@ -20,9 +20,10 @@
         <p>Price: <span>{{ $trip->Trip_price }}sp</span></p>
         <p>Company: <span>{{ $trip->bus->Company->Company_Name }}</span></p>
         <p class="details">Details of the trip:<span>{{ $trip->Details }} </span> </p>
-            <a href="{{ route('app.Tripdetails',['trip' => $trip->id]) }}   ">
-            <button type="submit">Book now</button>
-            </a>
+            <a href="{{ route('app.bookingconfirm',['trip' => $trip->id]) }}   ">
+          
+            <button type="submit">Book now</button></a>
+
       </div>
 
       <div id="map" style="width: 546px ;height: 70vh; " ></div>

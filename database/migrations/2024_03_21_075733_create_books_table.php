@@ -13,8 +13,14 @@ return new class extends Migration
     {
         Schema::create('books', function (Blueprint $table) {
             $table->id();
+            $table->string('FullName');
+            $table->string('MotherName');
+            $table->string('FatherName');
+            $table->string('Gander');
+            $table->integer('ID_Number');
+            $table->date('Birth_date');
             $table->foreignId('trip_id')->constrained('trips');
-            $table->foreignId('customer_id')->constrained('customers');
+            $table->foreignId('customer_id')->constrained('customers')->nullable();
             $table->timestamps();
         });
     }

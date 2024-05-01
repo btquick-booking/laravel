@@ -29,7 +29,7 @@
             {{-- <input id="statuss" type="radio" name="status"><label class="T_S" for="statuss">Round-Trip</label> --}}
            </div>
 
-            <select name="origin"  class="select">
+            <select name="origin" class="s" >
                 <option value="">Origin</option>
                 @foreach ([
                     'Damascus' => 'Damascus',
@@ -53,7 +53,7 @@
                 @endforeach
             </select>
 
-            <select name="destination" class="select" >
+            <select name="destination"   class="s">
               <option value="">destination</option>
               @foreach ([
                 'Damascus' => 'Damascus',
@@ -84,7 +84,7 @@
           <input class="T_D" name="date" type="date" placeholder="Trip date" >
 
 
-          <select name="company" class="select">
+          <select name="company"   class="s" >
               <option value="">Company</option>
               @foreach (  $companies   as  $key=> $item)
                <option value="{{$key}}">{{$item}}  </option>
@@ -96,7 +96,7 @@
           <input  name="min_price" type="number" placeholder="Min Price" >
           <input  name="max_price" type="number" placeholder="Max Price" >
           <br><br>
-          <button type="submit"  >Search</button>
+          <button type="submit" class="bt"  >Search</button>
         </form>
     </div>
 

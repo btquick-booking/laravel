@@ -9,6 +9,17 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class Book extends Model
 {
+    protected $fillable = [
+        'FullName',
+        'MotherName',
+        'FatherName',
+        'ID_Number',
+        'Birth_date',
+        'trip_id',
+        'customer_id',
+        'Gander',
+
+      ];
     use HasFactory;
   public function Trip():BelongsTo
   {

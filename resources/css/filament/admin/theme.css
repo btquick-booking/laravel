@@ -136,7 +136,7 @@
     margin-left: 4px; */
 
 /* } */
-select{
+/* select{
     font-size: 18px;
     width: 389px;
     height: 45px;
@@ -147,8 +147,8 @@ select{
     background-color: transparent;
     margin-left: 4px;
 
-}
-.T_D{
+} */
+/* .T_D{
     font-size: 18px;
     width: 379px;
     height: 45px;
@@ -158,8 +158,8 @@ select{
     color: #888888;
     margin-left: 4px;
 
-}
-button{
+} */
+/* button{
     font-size: 19px;
     width: 156px;
     height: 41px;
@@ -168,7 +168,7 @@ button{
     border-radius: 40px;
     background: #2DABCA;
     margin: 18px 0px 0px 4px;
-}
+} */
 /* .h4{
 
     @apply   text-[28px] ml-[15px] my-[0px] mr-[30px]  text-[#195E82] ;

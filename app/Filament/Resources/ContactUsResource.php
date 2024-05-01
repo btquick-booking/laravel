@@ -71,7 +71,7 @@ class ContactUsResource extends Resource
         return [
             'index' => Pages\ListContactUs::route('/'),
          //   'create' => Pages\CreateContactUs::route('/create'),
-          //  'edit' => Pages\EditContactUs::route('/{record}/edit'),
+          // 'edit' => Pages\EditContactUs::route('/{record}/edit'),
         ];
     }
 }

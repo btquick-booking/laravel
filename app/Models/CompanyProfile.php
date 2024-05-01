@@ -10,6 +10,13 @@ class CompanyProfile extends Model
 {
     protected $fillable =[
 'company_id',
+'image',
+'name',
+'Phone_Number',
+'Email',
+'address',
+'details',
+
 
     ];
     public function Company():BelongsTo

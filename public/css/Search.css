@@ -28,7 +28,7 @@ body{
     color: #195E82;
     font-size: 25px;
 }
-select{
+.s{
     font-size: 18px;
     width: 389px;
     height: 45px;
@@ -55,7 +55,7 @@ select:focus{
     margin-left: 4px;
 
 }
-button{
+.bt{
     font-size: 19px;
     width: 156px;
     height: 41px;

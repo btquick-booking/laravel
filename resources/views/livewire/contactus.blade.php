@@ -1,4 +1,4 @@
-<div id ="body">
+<div class ="body">
 
     <x-slot:css>
         <link rel="stylesheet" href="{{asset('css/ContactUs.css')}}">
@@ -10,7 +10,7 @@
     <div class="cc">
 
         <form wire:submit.prevent="submit">
-    <h2>Contact Us</h2>
+    <h2 class="h2">Contact Us</h2>
 
 
     <div class="input-box">

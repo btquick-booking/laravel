@@ -15,7 +15,7 @@ class Customer extends Model
        'Gender',
        'ID_Number',
        'Seat_Number',
-      
+
        'Message',
     ];
 

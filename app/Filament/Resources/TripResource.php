@@ -25,7 +25,7 @@ class TripResource extends Resource
         return $form
             ->schema([
                 Forms\Components\Section::make('Information Trip  ')
-                  
+
                     ->schema([
                 Forms\Components\TextInput::make('Starting_place')
                     ->required(),
@@ -59,6 +59,7 @@ class TripResource extends Resource
     {
         return $table
             ->columns([
+                
                 Tables\Columns\TextColumn::make('Starting_place')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('Destination_place')

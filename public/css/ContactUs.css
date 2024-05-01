@@ -5,7 +5,7 @@
     box-sizing: border-box;
 }
 
-#body
+.body
 {   display: flex;
     /* justify-content: center; */
     align-items: center;
@@ -24,7 +24,7 @@
 
 
 
-h2
+.h2
 {
     margin-left: 70px;
     margin-top: -181px;

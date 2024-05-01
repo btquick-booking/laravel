@@ -14,11 +14,12 @@
     @livewireStyles
 
     @vite('resources/css/filament/admin/theme.css')
-
+    @vite('resources/js/app.js')
 </head>
-<body>
+<body x-data="data()" x-init="init()" >
 
 {{ $slot }}
+@livewire('notifications')
 @livewireScripts
 </body>
 

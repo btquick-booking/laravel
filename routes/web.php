@@ -1,13 +1,18 @@
 <?php
 use App\Livewire\Search;
-use App\Livewire\departurelist;
+use App\Livewire\ContactUs;
 use App\Livewire\Auth\Login;
 
-use App\Livewire\Auth\Register;
-use App\Livewire\ContactUs;
 use App\Livewire\Tripdetails;
-use Illuminate\Support\Facades\Route;
+use App\Livewire\Chechout;
+use App\Livewire\Auth\Register;
+use App\Livewire\departurelist;
+
+use App\Livewire\Bookingconfirm;
 use Spatie\Valuestore\Valuestore;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CheckoutController;
+use App\Livewire\Checkout;
 
 Route::get('/', function () {
     $valuestore = Valuestore::make('visit.json');
@@ -23,3 +28,8 @@ Route::get('/Search',Search::class)->name('app.Search')->middleware('auth');
 Route::get('/departurelist',departurelist::class)->name('app.departurelist');
 Route::get('/contactus',ContactUs::class)->name('app.contactus');
 Route::get('/trip/{trip}',Tripdetails::class)->name('app.Tripdetails');
+
+
+Route::get('/bookingconfirm/{booking}',Bookingconfirm::class)->name('app.bookingconfirm');
+Route::post('/checkout', [CheckoutController::class, 'store'])->name('checkout.store');
+Route::get('/checkout',Checkout::class)->name('app.checkout');
