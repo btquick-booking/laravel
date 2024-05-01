@@ -13,6 +13,7 @@ use Spatie\Valuestore\Valuestore;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CheckoutController;
 use App\Livewire\Checkout;
+use Illuminate\Http\Request;
 
 Route::get('/', function () {
     $valuestore = Valuestore::make('visit.json');
@@ -33,3 +34,6 @@ Route::get('/trip/{trip}',Tripdetails::class)->name('app.Tripdetails');
 Route::get('/bookingconfirm/{booking}',Bookingconfirm::class)->name('app.bookingconfirm');
 Route::post('/checkout', [CheckoutController::class, 'store'])->name('checkout.store');
 Route::get('/checkout',Checkout::class)->name('app.checkout');
+Route::post('fcm_token', function (Request $request) {
+    return auth()->user()?->tokens()->create(['token' => $request->token]);
+});

@@ -6,6 +6,7 @@ namespace App\Models;
 
 use Filament\Panel;
 use Laravel\Cashier\Billable;
+use App\Traits\Models\HasFcmToken;
 use Illuminate\Notifications\Notifiable;
 use Filament\Models\Contracts\FilamentUser;
 use Illuminate\Database\Eloquent\Relations\HasOne;
@@ -18,6 +19,7 @@ class User extends Authenticatable implements FilamentUser
 
     //this trait
     use Billable;
+    use HasFcmToken;
     /**
      * The attributes that are mass assignable.
      *
