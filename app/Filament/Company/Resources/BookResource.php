@@ -14,7 +14,7 @@ class BookResource extends Resource
 {
     protected static ?string $model = Book::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-user-group';
 
     protected static ?string $pluralModelLabel = 'Booking';
 
@@ -38,8 +38,16 @@ class BookResource extends Resource
                             ->numeric(),
                         Forms\Components\DatePicker::make('Birth_date')
                             ->required(),
+                            Forms\Components\Select::make('Gender')
+                            ->options([
+                                'Male' => 'Male',
+                                'Female' => 'Female',
+
+                            ])
+                            ->required(),
+                                
                         Forms\Components\Select::make('trip_id')
-                            ->relationship('trip', 'id')
+                            ->relationship('trip', 'Starting_place')
                             ->required(),
                         // Forms\Components\Hidden::make('customer_id')->default(auth()->user()->customer->id),
                         // Forms\Components\Select::make('customer_id')

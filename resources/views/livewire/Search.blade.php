@@ -29,7 +29,7 @@
             {{-- <input id="statuss" type="radio" name="status"><label class="T_S" for="statuss">Round-Trip</label> --}}
            </div>
 
-            <select name="origin" class="s" >
+<select             name="origin" class="s" >
                 <option value="">Origin</option>
                 @foreach ([
                     'Damascus' => 'Damascus',
