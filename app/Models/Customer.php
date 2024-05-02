@@ -9,23 +9,18 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class Customer extends Model
 {
     use HasFactory;
-    protected $fillable = [
-       'Full_name',
-       'Birth_date',
-       'Gender',
-       'ID_Number',
-       'Seat_Number',
 
-       'Message',
+    protected $fillable = [
+'user_id',
     ];
 
     public function trips()
-       {
-           return $this->belongsToMany(Trip::class, 'books');
-       }
+    {
+        return $this->belongsToMany(Trip::class, 'books');
+    }
 
-  public function Book():HasMany
-  {
-      return $this->hasMany(Book::class);
-  }
+    public function books(): HasMany
+    {
+        return $this->hasMany(Book::class);
+    }
 }

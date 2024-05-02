@@ -2,11 +2,9 @@
 
 namespace App\Providers;
 
-use Spatie\Valuestore\Valuestore;
 use App\Http\Responses\LogoutResponse;
-
-use Illuminate\Support\ServiceProvider;
 use Filament\Http\Responses\Auth\Contracts\LogoutResponse as LogoutResponseContract;
+use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
 {

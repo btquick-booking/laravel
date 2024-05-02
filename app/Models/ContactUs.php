@@ -11,7 +11,8 @@ class ContactUs extends Model
         'name',
         'email',
         'message',
-        
+
     ];
+
     use HasFactory;
 }

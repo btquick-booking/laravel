@@ -2,20 +2,19 @@
 
 namespace App\Filament\Company\Widgets;
 
-use Carbon\Carbon;
 use App\Models\Trip;
+use Filament\Widgets\ChartWidget;
 use Flowframe\Trend\Trend;
 use Flowframe\Trend\TrendValue;
-use PhpParser\Node\Stmt\Return_;
-use Filament\Widgets\ChartWidget;
 
 class TripsChart extends ChartWidget
 {
-
-
     protected static bool $isLazy = false;
+
     protected static ?string $heading = 'Chart';
+
     protected static string $color = 'success';
+
     protected function getData(): array
     {
         // $data = Trend::model(Trip::class)
@@ -32,23 +31,21 @@ class TripsChart extends ChartWidget
         // ->perDay()
         // ->count();
 
-    return [
-        'datasets' => [
-            [
-                'label' => 'User visit',
-                // 'data' => $data->map(fn (TrendValue $value) => $value->aggregate),
-                'data' => [],
+        return [
+            'datasets' => [
+                [
+                    'label' => 'User visit',
+                    // 'data' => $data->map(fn (TrendValue $value) => $value->aggregate),
+                    'data' => [],
+                ],
             ],
-        ],
-        'labels' => [],
-        // 'labels' => $data->map(fn (TrendValue $value) => $value->date),
-    ];
+            'labels' => [],
+            // 'labels' => $data->map(fn (TrendValue $value) => $value->date),
+        ];
     }
-
 
     protected function getType(): string
     {
         return 'line';
     }
-
 }

@@ -2,13 +2,12 @@
 
 namespace App\Livewire;
 
-use Livewire\Component;
 use Illuminate\Http\Request;
-
 use Illuminate\Support\Facades\Auth;
+use Livewire\Component;
+
 class LogoutComponant extends Component
 {
-
     public function logout(Request $request)
     {
         Auth::logout();

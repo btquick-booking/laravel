@@ -9,7 +9,9 @@ use Filament\Resources\Pages\ListRecords;
 class ListContactUs extends ListRecords
 {
     protected static string $resource = ContactUsResource::class;
-    protected static ?string $title = "Contact Us";
+
+    protected static ?string $title = 'Contact Us';
+
     protected function getHeaderActions(): array
     {
         return [

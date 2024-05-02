@@ -9,8 +9,9 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class Payment extends Model
 {
     use HasFactory;
-public function Book():BelongsTo
-{
-    return $this->belongsTo(Book::class);
-}
+
+    public function Book(): BelongsTo
+    {
+        return $this->belongsTo(Book::class);
+    }
 }

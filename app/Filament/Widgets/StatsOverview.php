@@ -14,35 +14,34 @@ class StatsOverview extends BaseWidget
     protected function getStats(): array
     {
         $valuestore = Valuestore::make('visit.json');
+
         return [
 
-            Stat::make('Total visitor',$valuestore->get('visit'))
-            ->description('Increase in visitor')
+            Stat::make('Total visitor', $valuestore->get('visit'))
+                ->description('Increase in visitor')
           //  ->descriptionIcon('heroicon-m-arrow-trending-up')
-            ->descriptionIcon('heroicon-o-user-group')
-          ->color('success')
-            ->chart([7 ,3 ,4 ,5 ,6 ,3 ,5 , 3]),
+                ->descriptionIcon('heroicon-o-user-group')
+                ->color('success')
+                ->chart([7, 3, 4, 5, 6, 3, 5, 3]),
 
-            Stat::make('Total users',User::count())
-            ->description('Increase in Trips')
+            Stat::make('Total users', User::count())
+                ->description('Increase in Trips')
           //  ->descriptionIcon('heroicon-m-arrow-trending-up')
-            ->descriptionIcon('heroicon-o-user-group')
-          ->color('success')
-            ->chart([7 ,3 ,4 ,5 ,6 ,3 ,5 , 3]),
+                ->descriptionIcon('heroicon-o-user-group')
+                ->color('success')
+                ->chart([7, 3, 4, 5, 6, 3, 5, 3]),
 
-            Stat::make('Total Company',Company::count())
-            ->description('Increase in Trips')
-            ->descriptionIcon('heroicon-m-arrow-trending-up')
-            ->color('success')
-            ->chart([7 ,3 ,4 ,5 ,6 ,3 ,5 , 3]),
+            Stat::make('Total Company', Company::count())
+                ->description('Increase in Trips')
+                ->descriptionIcon('heroicon-m-arrow-trending-up')
+                ->color('success')
+                ->chart([7, 3, 4, 5, 6, 3, 5, 3]),
 
-
-
-            Stat::make('Total Trips',Trip::count())
-            ->description('Increase in Trips')
-            ->descriptionIcon('heroicon-m-arrow-trending-down')
-            ->color('danger')
-            ->chart([7 ,3 ,4 ,5 ,6 ,3 ,5 , 3]),
+            Stat::make('Total Trips', Trip::count())
+                ->description('Increase in Trips')
+                ->descriptionIcon('heroicon-m-arrow-trending-down')
+                ->color('danger')
+                ->chart([7, 3, 4, 5, 6, 3, 5, 3]),
         ];
     }
 }

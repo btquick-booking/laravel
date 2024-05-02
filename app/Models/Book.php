@@ -19,18 +19,22 @@ class Book extends Model
         'customer_id',
         'Gander',
 
-      ];
+    ];
+
     use HasFactory;
-  public function Trip():BelongsTo
-  {
-      return $this->belongsTo(Trip::class);
-  }
-  public function Customer():BelongsTo
-  {
-      return $this->belongsTo(Customer::class);
-  }
-  public function Payment():HasOne
-  {
-      return $this->hasOne(Payment::class);
-  }
+
+    public function Trip(): BelongsTo
+    {
+        return $this->belongsTo(Trip::class);
+    }
+
+    public function Customer(): BelongsTo
+    {
+        return $this->belongsTo(Customer::class);
+    }
+
+    public function Payment(): HasOne
+    {
+        return $this->hasOne(Payment::class);
+    }
 }

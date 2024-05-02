@@ -1,6 +1,6 @@
 <?php
 
 return [
-"key"   => env("TOMTOM_API_KEY"),
+    'key' => env('TOMTOM_API_KEY'),
 
 ];

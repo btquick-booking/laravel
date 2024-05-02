@@ -7,7 +7,6 @@ use Livewire\Component;
 
 class Login extends Component
 {
-
     #[Validate('required|email|exists:users,email')]
     public $email;
 
@@ -16,7 +15,8 @@ class Login extends Component
 
     public $remmeberMe = false;
 
-    public function submit(){
+    public function submit()
+    {
         $this->validate();
 
         if (auth()->attempt([
@@ -38,7 +38,7 @@ class Login extends Component
         );
     }
 
-    public function  render()
+    public function render()
     {
         return view('livewire.auth.login');
     }

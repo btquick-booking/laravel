@@ -1,9 +1,10 @@
 <?php
 
 namespace App\Livewire\Auth;
+
 use App\Models\User;
-use Livewire\Component;
 use Livewire\Attributes\Validate;
+use Livewire\Component;
 
 class Register extends Component
 {
@@ -16,11 +17,11 @@ class Register extends Component
     #[Validate('required|min:8|max:25')]
     public $password;
 
-
     #[Validate('required|same:password')]
     public $confirmPassword;
 
-    public function submit() {
+    public function submit()
+    {
         $this->validate();
 
         $user = User::create([
@@ -29,11 +30,12 @@ class Register extends Component
             'password' => $this->password,
         ]);
 
+        $user->customer()->create();
+
         auth()->loginUsingId($user->id);
 
-        return redirect()->intended(route('app.home'));
+        return redirect()->intended(route('app.login'));
     }
-
 
     public function render()
     {

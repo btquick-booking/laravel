@@ -3,21 +3,19 @@
 namespace App\Filament\Company\Resources;
 
 use App\Filament\Company\Resources\CompanyProfileResource\Pages;
-use App\Filament\Company\Resources\CompanyProfileResource\RelationManagers;
 use App\Models\CompanyProfile;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class CompanyProfileResource extends Resource
 {
     protected static ?string $model = CompanyProfile::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+
     protected static ?string $pluralModelLabel = 'Profile';
 
     public static function form(Form $form): Form
@@ -45,7 +43,7 @@ class CompanyProfileResource extends Resource
                 Forms\Components\TextInput::make('details')
                     ->required()
                     ->maxLength(255),
-                    Forms\Components\Hidden::make('company_id')->default(auth()->user()->company->id),
+                Forms\Components\Hidden::make('company_id')->default(auth()->user()->company->id),
 
             ]);
     }

@@ -9,7 +9,8 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class Profile extends Model
 {
     use HasFactory;
-    public function Bus():BelongsTo
+
+    public function Bus(): BelongsTo
     {
         return $this->belongsTo(Bus::class);
     }

@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('Gander');
             $table->integer('ID_Number');
             $table->date('Birth_date');
+          
             $table->foreignId('trip_id')->constrained('trips');
             $table->foreignId('customer_id')->constrained('customers')->nullable();
             $table->timestamps();

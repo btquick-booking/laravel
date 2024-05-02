@@ -9,7 +9,9 @@ use Filament\Resources\Pages\ListRecords;
 class ListCompanyProfiles extends ListRecords
 {
     protected static string $resource = CompanyProfileResource::class;
-    protected static ?string $title = "Profile";
+
+    protected static ?string $title = 'Profile';
+
     protected function getHeaderActions(): array
     {
         return [

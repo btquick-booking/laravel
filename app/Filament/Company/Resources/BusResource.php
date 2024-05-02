@@ -3,21 +3,19 @@
 namespace App\Filament\Company\Resources;
 
 use App\Filament\Company\Resources\BusResource\Pages;
-use App\Filament\Company\Resources\BusResource\RelationManagers;
 use App\Models\Bus;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class BusResource extends Resource
 {
     protected static ?string $model = Bus::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+
     protected static ?string $navigationGroup = 'System Management';
 
     public static function form(Form $form): Form
@@ -33,10 +31,10 @@ class BusResource extends Resource
                 Forms\Components\Toggle::make('Status')
                     ->required(),
 
-                    Forms\Components\Hidden::make('Company_id')->default(auth()->user()->company->id),
-                    // Forms\Components\Select::make('company_id')
-                    //     ->relationship('company', 'id')
-                    //     ->required(),
+                Forms\Components\Hidden::make('Company_id')->default(auth()->user()->company->id),
+                // Forms\Components\Select::make('company_id')
+                //     ->relationship('company', 'id')
+                //     ->required(),
             ]);
     }
 
@@ -80,10 +78,10 @@ class BusResource extends Resource
     public static function getRelations(): array
     {
         return [
-     //       return parent::getEloquentQuery()->where('company_id', auth()->user()->company->id);
+            //       return parent::getEloquentQuery()->where('company_id', auth()->user()->company->id);
 
             // return parent::getEloquentQuery()->where('company_id', [auth()->user()->company->id]);
-         ];
+        ];
 
     }
 

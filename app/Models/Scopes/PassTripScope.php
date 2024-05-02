@@ -13,6 +13,6 @@ class PassTripScope implements Scope
      */
     public function apply(Builder $builder, Model $model): void
     {
-        $builder->whereRaw("Concat(date, ' ', starting_time) >= '" . now()->format('Y-m-d H:i:s') . "'");
+        $builder->whereRaw("Concat(date, ' ', starting_time) >= '".now()->format('Y-m-d H:i:s')."'");
     }
 }

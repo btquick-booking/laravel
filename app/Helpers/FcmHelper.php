@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Http;
 
 class FcmHelper
 {
-    static private function getFcmApiUrl(): string
+    private static function getFcmApiUrl(): string
     {
         $projectId = config('fcm.project_id');
 
@@ -17,7 +17,7 @@ class FcmHelper
         return "https://fcm.googleapis.com/v1/projects/$projectId/messages:send";
     }
 
-    static private function getFcmHeader(): array
+    private static function getFcmHeader(): array
     {
         $credentialsFilePath = config('fcm.config_file_path');
         $client = new \Google_Client();
@@ -29,12 +29,12 @@ class FcmHelper
         $access_token = $token['access_token'];
 
         return [
-            "Authorization" => "Bearer $access_token",
-            'Content-Type' => 'application/json'
+            'Authorization' => "Bearer $access_token",
+            'Content-Type' => 'application/json',
         ];
     }
 
-    static public function send(FcmDTO ...$dtos): void
+    public static function send(FcmDTO ...$dtos): void
     {
         foreach ($dtos as $dto) {
             $payload['message'] = $dto->toArray();

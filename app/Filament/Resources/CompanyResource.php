@@ -3,15 +3,12 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\CompanyResource\Pages;
-use App\Filament\Resources\CompanyResource\RelationManagers;
 use App\Models\Company;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class CompanyResource extends Resource
 {
@@ -19,7 +16,7 @@ class CompanyResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
-     protected static ?string $navigationGroup = 'System Management';
+    protected static ?string $navigationGroup = 'System Management';
 
     public static function form(Form $form): Form
     {
@@ -34,8 +31,8 @@ class CompanyResource extends Resource
                     ->required()
                     ->numeric(),
                 Forms\Components\Select::make('user_id')
-                ->hiddenOn('edit')
-                ->relationship('user', 'email', fn ($query) => $query->doesntHave('company')->doesntHave('admin'))
+                    ->hiddenOn('edit')
+                    ->relationship('user', 'email', fn ($query) => $query->doesntHave('company')->doesntHave('admin'))
                     ->createOptionForm([
                         Forms\Components\TextInput::make('email')
                             ->label('Email')
@@ -62,7 +59,7 @@ class CompanyResource extends Resource
                 Tables\Columns\TextColumn::make('phone_number')
                     ->numeric()
                     ->sortable(),
-                    Tables\Columns\TextColumn::make('user.email')
+                Tables\Columns\TextColumn::make('user.email')
                     ->numeric()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('created_at')

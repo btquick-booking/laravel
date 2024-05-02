@@ -17,15 +17,15 @@ class TripFactory extends Factory
     public function definition(): array
     {
         return [
-            'Starting_place'=>fake()->city(),
-            'Destination_place'=>fake()->city(),
-            'date'=>fake()->date(),
-            'starting_time'=>fake()->time(),
-            'Access_time'=>fake()->time(),
-            'Driver_name'=>fake()->name(),
-            'Number_of_seat'=>fake()->numberBetween(1 , 40),
-            'Details'=>fake()->text(),
-            'Trip_price'=>fake()->numberBetween(10000 , 25000),
+            'Starting_place' => fake()->city(),
+            'Destination_place' => fake()->city(),
+            'date' => fake()->date(),
+            'starting_time' => fake()->time(),
+            'Access_time' => fake()->time(),
+            'Driver_name' => fake()->name(),
+            'Number_of_seat' => fake()->numberBetween(1, 40),
+            'Details' => fake()->text(),
+            'Trip_price' => fake()->numberBetween(10000, 25000),
         ];
     }
 }

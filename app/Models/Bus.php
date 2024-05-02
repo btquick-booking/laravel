@@ -10,23 +10,26 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class Bus extends Model
 {
     protected $fillable = [
-       'Code',
-       'Seat_Capacity',
-       'Status',
-       'Company_id',
+        'Code',
+        'Seat_Capacity',
+        'Status',
+        'Company_id',
 
-     ];
+    ];
+
     use HasFactory;
-    public function Company():BelongsTo
+
+    public function Company(): BelongsTo
     {
         return $this->belongsTo(Company::class, 'Company_id');
     }
-    public function Profile():HasMany
+
+    public function Profile(): HasMany
     {
         return $this->hasMany(Profile::class);
     }
 
-    public function Trips():HasMany
+    public function Trips(): HasMany
     {
         return $this->hasMany(Trip::class);
     }

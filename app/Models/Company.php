@@ -2,12 +2,10 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\HasOne;
-use Illuminate\Database\Eloquent\Relations\HasMany;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasManyThrough;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class Company extends Model
 {
@@ -25,15 +23,17 @@ class Company extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function trips():HasManyThrough
+    public function trips(): HasManyThrough
     {
-        return $this->hasManyThrough(Trip::class ,Bus::class);
+        return $this->hasManyThrough(Trip::class, Bus::class);
     }
-    public function Bus():HasOne
+
+    public function Bus(): HasOne
     {
         return $this->hasOne(Bus::class);
     }
-    public function CompanyProfiles():HasOne
+
+    public function CompanyProfiles(): HasOne
     {
         return $this->hasOne(CompanyProfile::class);
     }

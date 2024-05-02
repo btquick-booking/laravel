@@ -8,7 +8,6 @@ use Filament\Http\Middleware\DispatchServingFilamentEvent;
 use Filament\Pages;
 use Filament\Panel;
 use Filament\PanelProvider;
-use Filament\Support\Colors\Color;
 use Filament\Widgets;
 use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
 use Illuminate\Cookie\Middleware\EncryptCookies;
@@ -31,7 +30,7 @@ class CompanyPanelProvider extends PanelProvider
             ->colors([
                 'primary' => '#2DABCA',
             ])
-            ->brandLogo(asset('images/logoBus-removebg-preview.png'),)
+            ->brandLogo(asset('images/logoBus-removebg-preview.png'))
             ->brandLogoHeight('7rem')
            // ->font('Poppins')
             ->discoverResources(in: app_path('Filament/Company/Resources'), for: 'App\\Filament\\Company\\Resources')
@@ -41,14 +40,14 @@ class CompanyPanelProvider extends PanelProvider
             ])
             ->discoverWidgets(in: app_path('Filament/Company/Widgets'), for: 'App\\Filament\\Company\\Widgets')
             ->widgets([
-               // Widgets\AccountWidget::class,
-               // Widgets\FilamentInfoWidget::class,
+                // Widgets\AccountWidget::class,
+                // Widgets\FilamentInfoWidget::class,
             ])
-->navigationGroups(
-    [
-        'system management',
-    ]
-)
+            ->navigationGroups(
+                [
+                    'system management',
+                ]
+            )
 
             ->middleware([
                 EncryptCookies::class,

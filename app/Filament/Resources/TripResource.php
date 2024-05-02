@@ -3,21 +3,19 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\TripResource\Pages;
-use App\Filament\Resources\TripResource\RelationManagers;
 use App\Models\Trip;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class TripResource extends Resource
 {
     protected static ?string $model = Trip::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-inbox';
+
     protected static ?string $navigationGroup = 'Bus ticket';
 
     public static function form(Form $form): Form
@@ -27,31 +25,31 @@ class TripResource extends Resource
                 Forms\Components\Section::make('Information Trip  ')
 
                     ->schema([
-                Forms\Components\TextInput::make('Starting_place')
-                    ->required(),
-                Forms\Components\TextInput::make('Destination_place')
-                    ->required(),
-                Forms\Components\DatePicker::make('date')
-                    ->required(),
-                Forms\Components\TextInput::make('starting_time')
-                    ->required(),
-                Forms\Components\TextInput::make('Access_time')
-                    ->required(),
-                Forms\Components\TextInput::make('Driver_name')
-                    ->required(),
-                Forms\Components\TextInput::make('Number_of_seat')
-                    ->required()
-                    ->numeric(),
-                Forms\Components\Textarea::make('Details')
-                    ->required()
-                    ->columnSpanFull(),
-                Forms\Components\TextInput::make('Trip_price')
-                    ->required()
-                    ->numeric(),
-                    Forms\Components\Select::make('company_id')
-                    ->relationship('company', 'id')
-                    ->required(),
-                    ])
+                        Forms\Components\TextInput::make('Starting_place')
+                            ->required(),
+                        Forms\Components\TextInput::make('Destination_place')
+                            ->required(),
+                        Forms\Components\DatePicker::make('date')
+                            ->required(),
+                        Forms\Components\TextInput::make('starting_time')
+                            ->required(),
+                        Forms\Components\TextInput::make('Access_time')
+                            ->required(),
+                        Forms\Components\TextInput::make('Driver_name')
+                            ->required(),
+                        Forms\Components\TextInput::make('Number_of_seat')
+                            ->required()
+                            ->numeric(),
+                        Forms\Components\Textarea::make('Details')
+                            ->required()
+                            ->columnSpanFull(),
+                        Forms\Components\TextInput::make('Trip_price')
+                            ->required()
+                            ->numeric(),
+                        Forms\Components\Select::make('company_id')
+                            ->relationship('company', 'id')
+                            ->required(),
+                    ]),
             ]);
     }
 
@@ -59,7 +57,7 @@ class TripResource extends Resource
     {
         return $table
             ->columns([
-                
+
                 Tables\Columns\TextColumn::make('Starting_place')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('Destination_place')
@@ -68,9 +66,9 @@ class TripResource extends Resource
                     ->date()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('starting_time')
-                ->time(),
+                    ->time(),
                 Tables\Columns\TextColumn::make('Access_time')
-                ->time(),
+                    ->time(),
                 Tables\Columns\TextColumn::make('Driver_name')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('Number_of_seat')
@@ -112,8 +110,8 @@ class TripResource extends Resource
     {
         return [
             'index' => Pages\ListTrips::route('/'),
-           // 'create' => Pages\CreateTrip::route('/create'),
-           // 'edit' => Pages\EditTrip::route('/{record}/edit'),
+            // 'create' => Pages\CreateTrip::route('/create'),
+            // 'edit' => Pages\EditTrip::route('/{record}/edit'),
         ];
     }
 }

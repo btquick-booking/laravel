@@ -10,9 +10,9 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class Admin extends Model
 {
     use HasFactory;
-    protected $fillable =[
-     'user_id',
 
+    protected $fillable = [
+        'user_id',
 
     ];
 
@@ -21,7 +21,7 @@ class Admin extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function Company():HasMany
+    public function Company(): HasMany
     {
         return $this->hasMany(Company::class);
     }

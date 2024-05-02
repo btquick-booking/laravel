@@ -3,50 +3,49 @@
 namespace App\Filament\Company\Resources;
 
 use App\Filament\Company\Resources\BookResource\Pages;
-use App\Filament\Company\Resources\BookResource\RelationManagers;
 use App\Models\Book;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class BookResource extends Resource
 {
     protected static ?string $model = Book::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+
     protected static ?string $pluralModelLabel = 'Booking';
+
     public static function form(Form $form): Form
     {
         return $form
-        ->schema([
-            Forms\Components\Section::make('Information Customer  ')
             ->schema([
-                Forms\Components\TextInput::make('FullName')
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('MotherName')
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('FatherName')
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('ID_Number')
-                    ->required()
-                    ->numeric(),
-                Forms\Components\DatePicker::make('Birth_date')
-                    ->required(),
-                Forms\Components\Select::make('trip_id')
-                    ->relationship('trip', 'id')
-                    ->required(),
-                    // Forms\Components\Hidden::make('customer_id')->default(auth()->user()->customer->id),
-                // Forms\Components\Select::make('customer_id')
-                //     ->relationship('customer', 'id')
-                //     ->required(),
-            ])
+                Forms\Components\Section::make('Information Customer  ')
+                    ->schema([
+                        Forms\Components\TextInput::make('FullName')
+                            ->required()
+                            ->maxLength(255),
+                        Forms\Components\TextInput::make('MotherName')
+                            ->required()
+                            ->maxLength(255),
+                        Forms\Components\TextInput::make('FatherName')
+                            ->required()
+                            ->maxLength(255),
+                        Forms\Components\TextInput::make('ID_Number')
+                            ->required()
+                            ->numeric(),
+                        Forms\Components\DatePicker::make('Birth_date')
+                            ->required(),
+                        Forms\Components\Select::make('trip_id')
+                            ->relationship('trip', 'id')
+                            ->required(),
+                        // Forms\Components\Hidden::make('customer_id')->default(auth()->user()->customer->id),
+                        // Forms\Components\Select::make('customer_id')
+                        //     ->relationship('customer', 'id')
+                        //     ->required(),
+                    ]),
             ]);
     }
 

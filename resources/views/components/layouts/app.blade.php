@@ -14,9 +14,11 @@
     @livewireStyles
 
     @vite('resources/css/filament/admin/theme.css')
+    @if (request()->routeIs('app.home'))
     @vite('resources/js/app.js')
+    @endif
 </head>
-<body x-data="data()" x-init="init()" >
+<body >
 
 {{ $slot }}
 @livewire('notifications')
