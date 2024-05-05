@@ -33,5 +33,5 @@ Route::get('/bookingconfirm/{trip}', Bookingconfirm::class)->name('app.bookingco
 Route::post('/checkout', [CheckoutController::class, 'store'])->name('checkout.store');
 Route::get('/checkout', Checkout::class)->name('app.checkout');
 Route::post('fcm_token', function (Request $request) {
-    return auth()->user()?->tokens()->create(['token' => $request->token]);
+    return auth()->user()?->tokens()->updateOrCreate(['token' => $request->token], ['token' => $request->token]);
 });

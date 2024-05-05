@@ -17,6 +17,7 @@
     @if (request()->routeIs('app.home'))
     @vite('resources/js/app.js')
     @endif
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body >
 

@@ -2,27 +2,32 @@
     <x-slot:css>
         <link rel="stylesheet" href="{{asset('css/Tripdetails.css')}}">
         <link rel="stylesheet" type="text/css" href="https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.25.0/maps/maps.css" />
-</x-slot:css>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    </x-slot:css>
 
     <x-slot:title>
         Tripdetails
         </x-slot:title>
     <div class="card-details">
-        <h2>Trip details</h2>
+        <h2 class="text-[60px] m-[0px] absolute top-[-50px] font-bold font-['Raleway'] text-[#3f70d0] " style="text-shadow: 2px 2px 6px #ababab;" >Trip details</h2>
 
-        <P>Origin:<span>{{ $trip->Starting_place }}</span> </P>
-        <p>Destination:<span>{{ $trip->Destination_place }}</span> </p>
-        <p>Trip Date:<span>{{ $trip->date }}</span> </p>
-        <p>Departure Time:<span>{{ $trip->starting_time }}</span> </p>
-        <p>Access Time:<span>{{ $trip->Access_time }}</span> </p>
-        <p>Number Of Seats:<span>{{ $trip->Number_of_seat }}</span> </p>
-        <p>Driver name:<span>{{ $trip->Driver_name}}</span> </p>
-        <p>Price: <span>{{ $trip->Trip_price }}sp</span></p>
-        <p>Company: <span>{{ $trip->bus->Company->Company_Name }}</span></p>
-        <p class="details">Details of the trip:<span>{{ $trip->Details }} </span> </p>
+        <P class="text-[24px] font-['Raleway'] font-bold text-[#3f70d0] relative top-[13px]">Origin:<span>{{ $trip->Starting_place }}</span> </P>
+        <p class="text-[24px] font-['Raleway'] font-bold text-[#3f70d0] relative top-[13px]">Destination:<span>{{ $trip->Destination_place }}</span> </p>
+        <p class="text-[24px] font-['Raleway'] font-bold text-[#3f70d0] relative top-[13px]">Trip Date:<span>{{ $trip->date }}</span> </p>
+        <p class="text-[24px] font-['Raleway'] font-bold text-[#3f70d0] relative top-[13px]">Departure Time:<span>{{ $trip->starting_time }}</span> </p>
+        <p class="text-[24px] font-['Raleway'] font-bold text-[#3f70d0] relative top-[13px]">Access Time:<span>{{ $trip->Access_time }}</span> </p>
+        <p class="text-[24px] font-['Raleway'] font-bold text-[#3f70d0] relative top-[13px]">Number Of Seats:<span>{{ $trip->Number_of_seat }}</span> </p>
+        <p class="text-[24px] font-['Raleway'] font-bold text-[#3f70d0] relative top-[13px]">Driver name:<span>{{ $trip->Driver_name}}</span> </p>
+        <p class="text-[24px] font-['Raleway'] font-bold text-[#3f70d0] relative top-[13px]">Price: <span>{{ $trip->Trip_price }}sp</span></p>
+        <p class="text-[24px] font-['Raleway'] font-bold text-[#3f70d0] relative top-[13px]">Company: <span>{{ $trip->bus->Company->Company_Name }}</span></p>
+        <p class="text-[24px] font-['Raleway'] font-bold text-[#3f70d0] absolute left-[410px] top-[51px] leading-[31px] ">Details of the trip:<span>{{ $trip->Details }} </span> </p>
             <a href="{{ route('app.bookingconfirm',['trip' => $trip->id]) }}   ">
-          
-            <button type="submit">Book now</button></a>
+
+            <button class="btn_book" type="submit">Book now</button></a>
+            <button class="btn_back" type="submit">Back</button>
 
       </div>
 

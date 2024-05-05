@@ -1,4 +1,15 @@
+<x-slot:css>
+    <link rel="stylesheet" href="{{asset('css/signUp.css')}}">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+</x-slot:css>
+
+
+
+<div class="flex justify-center items-center min-h-[100vh] m-[0%] p-[0%] bg-cover bg-no-repeat bg-center" style="background :url(../images/signup.png);">
     <div class="cc">
         <form wire:submit.prevent="submit">
     <h2>Sign Up</h2>
@@ -38,4 +49,6 @@
 
 
     </form>
-    </div>
+</div>
+</div>
+

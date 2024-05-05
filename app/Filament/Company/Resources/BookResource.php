@@ -13,7 +13,7 @@ use Filament\Tables\Table;
 class BookResource extends Resource
 {
     protected static ?string $model = Book::class;
-
+    protected static ?string $navigationGroup = 'System Management';
     protected static ?string $navigationIcon = 'heroicon-o-user-group';
 
     protected static ?string $pluralModelLabel = 'Booking';
@@ -38,14 +38,14 @@ class BookResource extends Resource
                             ->numeric(),
                         Forms\Components\DatePicker::make('Birth_date')
                             ->required(),
-                            Forms\Components\Select::make('Gender')
+                            Forms\Components\Select::make('Gander')
                             ->options([
                                 'Male' => 'Male',
                                 'Female' => 'Female',
 
                             ])
                             ->required(),
-                                
+
                         Forms\Components\Select::make('trip_id')
                             ->relationship('trip', 'Starting_place')
                             ->required(),

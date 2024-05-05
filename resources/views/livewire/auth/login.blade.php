@@ -1,5 +1,12 @@
+<x-slot:css>
+    <link rel="stylesheet" href="{{asset('css/loginForm.css')}}">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
+</x-slot:css>
+<div class="flex justify-center items-center min-h-[100vh] m-[0%] p-[0%] bg-cover bg-no-repeat bg-center" style="background-image:url(../images/login2.jpg);">
     <div class="cc">
     <form wire:submit.prevent="submit">
 <h2>Login</h2>
@@ -31,8 +38,9 @@
     <x-filament::loading-indicator wire:loading style="height: 10px; width: 10px;" />
 </button>
 <div class="register-link">
-    <p>Don't have an account?! <a href="{{ route('app.Register') }}">register</a></p>
+    <p class="text-[#5f7eb9]">Don't have an account?! <a href="{{ route('app.Register') }}">register</a></p>
 </div>
 </form>
-</div>
+</div></div>
+
 

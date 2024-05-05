@@ -76,7 +76,8 @@ class TripResource extends Resource
                         Forms\Components\TextInput::make('Driver_name')
                             ->required(),
                         // Forms\Components\TextInput::make('Number_of_seat')
-                        // ->disabled()
+                        //  ->relationship('bus','bus.Seat_Capacity')
+
                         //     ->required()
                         //     ->numeric(),
                         Forms\Components\Textarea::make('Details')
@@ -118,9 +119,14 @@ class TripResource extends Resource
                 Tables\Columns\TextColumn::make('Access_time'),
                 Tables\Columns\TextColumn::make('Driver_name')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('Number_of_seat')
+                Tables\Columns\TextColumn::make('bus.Seat_Capacity')
+                ->label('Total Seats')
                     ->numeric()
                     ->sortable(),
+                    Tables\Columns\TextColumn::make('availableSeats')
+                    ->label('Available Seats')
+                        ->numeric()
+                        ->sortable(),
                 Tables\Columns\TextColumn::make('Trip_price')
                     ->numeric()
                     ->sortable(),

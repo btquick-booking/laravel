@@ -7,6 +7,7 @@ use App\Models\Trip;
 use Livewire\Component;
 use Illuminate\Support\Str;
 use App\Helpers\StripeHelper;
+use App\Jobs\SendFcmBeforeTrip;
 use Livewire\Attributes\Validate;
 use Filament\Notifications\Notification;
 
@@ -42,6 +43,9 @@ class Bookingconfirm extends Component
         // ->title('Successfully')
         // ->success()
         // ->send();
+        $trip = Trip::find($this->trip_id);
+
+        SendFcmBeforeTrip::dispatch( $trip, $user->id)->delay($trip->startDate->subHour());
 
         return redirect()->intended(route('app.home'));
 

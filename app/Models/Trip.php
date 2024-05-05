@@ -2,11 +2,13 @@
 
 namespace App\Models;
 
+use Carbon\Carbon;
 use App\Models\Scopes\PassTripScope;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Trip extends Model
 {
@@ -24,6 +26,32 @@ class Trip extends Model
         'Trip_price',
         'bus_id',
     ];
+
+    public function startDate(): Attribute
+    {
+        return new Attribute(
+            get: function(){
+              $startDate = Carbon::parse($this->date . ' ' . $this->starting_time);
+
+              return $startDate;
+            },
+        );
+    }
+
+
+    public function availableSeats(): Attribute
+    {
+        return new Attribute(
+            get: function(){
+                $Seat_Capacity= $this->bus->Seat_Capacity - $this->Book()->count() ;
+
+              return $Seat_Capacity;
+            },
+        );
+    }
+
+
+
 
     protected static function booted()
     {
