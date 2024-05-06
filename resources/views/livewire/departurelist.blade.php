@@ -29,7 +29,7 @@
                 <td class="td" >{{ $trip->Starting_place }}</td>
                 <td class="td"  >{{ $trip->Destination_place }}</td>
                 <td class="td"  >{{ $trip->date }} {{ $trip->starting_time }}</td>
-                <td class="td"  >{{ $trip->bus->Seat_Capacity  }}</td>
+                <td class="td"  >{{ $trip->availableSeats}}</td>
                 <td class="td"  >{{ $trip->Trip_price }}sp</td>
                 <td class="td"  ><button ><a href="{{ route('app.Tripdetails', ['trip' => $trip->id]) }}">Details</a></button></td>
             </tr>
