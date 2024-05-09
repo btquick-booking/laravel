@@ -9,16 +9,18 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
 </x-slot:css>
 <div x-data="data()" x-init="init()">
 
     <div class="Price">
-        <h2>Total Price :</h2>
+        <h2 style="text-align: center">Total Price :</h2>
         <h1 x-text="totalPrice" style="text-align: center;">0</h1>
     </div>
     <h2 class="h2">Booking confirmation</h2>
     <h3 class="h3"> Insert your information to confirm Booking </h3>
-    <div class="flex flex-col">
+    <div>
         <template x-for="(customer, index) in customers">
             <div class="info_card" :key="customer">
                 {{-- <div x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 scale-90"
@@ -27,6 +29,7 @@
 </div> --}}
                 <p x-text="customer.FullName"></p>
                 <button class="btn_card" type="submit" @click="editElement(index)">Edit</button>
+
                 <button class="btn_card" type="button" @click="deleteElement(index)">Delete</button>
 
             </div>
@@ -53,7 +56,11 @@
             style="border-radius: 40px;">
         <br>
         <button id="plus" type="button" x-show="selectedIndex == null" @click="add()">+</button>
-        <button id="plus" type="button" x-show="selectedIndex != null" @click="add()">Save</button>
+        {{-- <button id="plus" type="button" x-show="selectedIndex != null" @click="add()">Save</button> --}}
+        <button id="plus" type="button" x-show="selectedIndex != null" @click="add()">
+            <i class="fas fa-save"></i>
+        </button>
+
 
         <button id="con" type="button" @click="confirm()">confirm
 

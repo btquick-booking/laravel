@@ -4,6 +4,7 @@ use App\Http\Controllers\CheckoutController;
 use App\Livewire\Auth\Login;
 use App\Livewire\Auth\Register;
 use App\Livewire\Bookingconfirm;
+use App\Livewire\CompanyProfile;
 use App\Livewire\Checkout;
 use App\Livewire\ContactUs;
 use App\Livewire\departurelist;
@@ -23,7 +24,7 @@ Route::get('/', function () {
 Route::get('/login', Login::class)->name('app.login');
 
 Route::get('/register', Register::class)->name('app.Register');
-
+Route::get('/company-profile', CompanyProfile::class)->name('app.companyprofile');
 Route::get('/Search', Search::class)->name('app.Search');
 Route::get('/departurelist', departurelist::class)->name('app.departurelist');
 Route::get('/contactus', ContactUs::class)->name('app.contactus');
@@ -34,4 +35,6 @@ Route::post('/checkout', [CheckoutController::class, 'store'])->name('checkout.s
 Route::get('/checkout', Checkout::class)->name('app.checkout');
 Route::post('fcm_token', function (Request $request) {
     return auth()->user()?->tokens()->updateOrCreate(['token' => $request->token], ['token' => $request->token]);
+
+
 });

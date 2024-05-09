@@ -1,15 +1,14 @@
 body{
-    /* margin: 0;
-    padding: 0; */
-    background-image: url(../images/Slice1.jpg);
+
+    background-image: url(../images/departureList.png);
     background-repeat: no-repeat;
     background-size: cover;
 }
-.h2{
+/* .h2{
     font-size:38px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #195E82;
-    /* margin-bottom: 50px; */
+
     margin: 60px 0px 60px 30px;
     text-shadow: 3px 3px 7px #ababab;
     color: #13709a;
@@ -19,9 +18,9 @@ body{
     width: 100%;
     border-spacing: 2px;
     font-size: 23px;
-    /* border-collapse: collapse; */
+
     align-items: center;
-    /* margin: 0px 20px 0px 20px; */
+
     margin-top: 20px;
     box-shadow: 1px 2px 15px #ababab;
 }
@@ -57,4 +56,4 @@ button{
 button:hover{
     background-color: #c6d7e4;
 
-}
+} */

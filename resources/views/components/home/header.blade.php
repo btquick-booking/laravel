@@ -1,29 +1,31 @@
 <header>
-    <div class="hidden md:block">
+
         <nav class="navbar">
-            <div id="navbar" {{-- class=" navbar flex justify-between items-center m-[0px 20px]" --}}>
-                <img class="rotate-div" src="{{ asset('images/logoBus-removebg-preview.png') }}" alt="bus_logo">
-                <nav class="menu">
-                    <ul class="mt-[-4px] flex justify-center items-center">
-                        <li class=" menuu text-[15.5px] ml-[27px] mt-[17px] mr-[17px] mb-[2px]"><a
+            <div class="flex justify-between items-end mt-[37px] mb-[37px] ml-[26px] mr-[26px]" >
+                <img class="w-[126px] mt-[23px] mr-[0px] mb-[-34px] ml-[20px]" src="{{ asset('images/logoBus-removebg-preview.png') }}" alt="bus_logo">
+                <nav class="w-[600px] float-left h-[70px]">
+                    <ul class="list-none mt-[-10px] flex justify-center items-center float-left">
+                        <li class="list-none text-[15.5px] mt-[29px] p-[14px] pr-[26px]"><a class="decoration-[none] text-[18px] font-['Raleway'] font-bold text-[#053ead] hover:text-[#87adf9]"
                                 href="#">Companies</a></li>
-                        <li class=" menuu text-[15.5px] ml-[27px] mt-[17px] mr-[17px] mb-[2px]"><a
+                        <li class="list-none text-[15.5px] mt-[29px] p-[14px] pr-[26px]"><a class="decoration-[none] text-[18px] font-['Raleway'] font-bold text-[#053ead] hover:text-[#87adf9]"
                                 href="{{ route('app.Search') }}">Search Trip</a></li>
-                        <li class=" menuu text-[15.5px] ml-[27px] mt-[17px] mr-[17px] mb-[2px]"><a href="#">About
+                        <li class="list-none text-[15.5px] mt-[29px] p-[14px] pr-[26px]"><a class="decoration-[none] text-[18px] font-['Raleway'] font-bold text-[#053ead] hover:text-[#87adf9]"  href="{{ route('app.companyprofile') }}">About
                                 Us</a></li>
-                        <li class=" menuu text-[15.5px] ml-[27px] mt-[17px] mr-[17px] mb-[2px]"><a
+                        <li class="list-none text-[15.5px] mt-[29px] p-[14px] pr-[26px]"><a class="decoration-[none] text-[18px] font-['Raleway'] font-bold text-[#053ead] hover:text-[#87adf9]"
                                 href="{{ route('app.contactus') }}">Contact Us</a></li>
                     </ul>
                 </nav>
-                <div class="login">
+
                     @if (auth()->check())
                         @livewire('logout-componant')
                     @else
-                        <a href="{{ route('app.login') }}"> <button type="submit" class="btn">Login</button></a>
+                        <a href="{{ route('app.login') }}"> <button type="submit" class="mt-[-10px] w-[100px] h-[40px] bg-[#fff] rounded-[40px] text-[17px] font-['Raleway']
+                            font-bold inline-block cursor-pointer text-[#3f70d0] transition duration-[.3s] ease-in hover:bg-[#3f70d0] hover:text-[#fff]  "
+                            style="border: 2px solid #fff; box-shadow: 0px 1px 10px;">Login</button></a>
                     @endif
                 </div>
         </nav>
-    </div>
+
     <div class="absolute bg-white md:hidden" x-data="{ isOpen: false }">
         <button @click="isOpen = !isOpen"
             class="block text-gray-500 hover:text-gray-700 focus:text-gray-700 focus:outline-none">
@@ -41,15 +43,15 @@
 
 
 
-    <div class="content">
-        <h1>BUS TICKETS </h1><br>
-        <h3>ONLINE SERVICE</h3><br>
-        <p class="par">Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>
-            At molestias, perspiciatis sit consequuntur quos libero <br>
-            asperiores ipsa quia nisi id nobis porro. Id voluptas officiis <br>
-            ratione vel quo fuga delectus quam natus nulla ad,<br> earum quis neque minima mollitia? Voluptatem
-            officiis <br>
-            nostrum numquam nulla odio.</p>
-        <button class="cn"><a href="{{ route('app.Register') }}">Sign Up</a></button>
+    <div class="w-[1200px] h-auto mt-[10px] mr-[10px] mb-[10px] ml-[54px] flex flex-col justify-center">
+        <h1 class="text-[60px] text-[#3f70d0] font-bold pl-[20px] mt-[7%] tracking-[2px]" style="text-shadow: 1px 1px 3px #ababab;">TRAVEL IT </h1><br>
+        <h3 class="font-[600px] ml-[21px] text-[#3f70d099]">ONLINE SERVICE</h3><br>
+        <p class="tracking-[1.5px] pl-[20px] pb-[25px] font-['Raleway'] leading-[30px] text-[18px] font-[600px] text-[#4e4d4d]">A Website for organizing and managing trips and<br>
+            reservations throughout Syria between customers<br>
+            and transportation companies to facilitate the<br>
+             reservation process, save time,and achieve <br>
+             a unique experience for users.</P>
+        <button  class="w-[160px] h-[40px] bg-[#3f70d0] border-none mb-[10px] ml-[20px] text-[18px] font-['Raleway'] font-bold rounded-[40px] cursor-pointer transition duration-[.4s] ease-in hover:bg-[#4784dc] hover:shadow-slate-500" style=":hover{box-shadow:1px 2px 7px #ababab}">
+            <a class="decoration-[none] text-[#fff] transition duration-[.3s] ease-in  font-['Raleway'] tracking-[2px]" href="{{ route('app.Register') }}">Sign Up</a></button>
     </div>
 </header>

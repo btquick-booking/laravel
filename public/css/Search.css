@@ -5,20 +5,17 @@
     margin: 18px 0px 30px 0px;
 } */
 
-/* body{
-    background:url(Slice3.png);
+body{
+    background :url(../images/search.png);
     background-size: cover;
     background-repeat: no-repeat;
-    min-height: 93vh;
-
-    margin: 0%;
-    padding: 0%;
-    background :url(../images/Slice3.png);
-    background-size: cover;
-    background-repeat: no-repeat;
+    min-height: 91vh;
     background-position: center;
+     font-family: 'Raleway';
 
-} */
+
+
+}
 /*
 .h4{
     font-size: 28px;

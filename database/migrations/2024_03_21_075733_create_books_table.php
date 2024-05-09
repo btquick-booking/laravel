@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('FatherName');
             $table->string('Gander');
             $table->integer('ID_Number');
-            $table->date('Birth_date');
+            $table->date('Birth_date')->nullable()->default(null)->where('Birth_date', '>', now());
 
             $table->foreignId('trip_id')->constrained('trips');
             $table->foreignId('customer_id')->nullable()->constrained('customers');

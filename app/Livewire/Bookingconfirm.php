@@ -16,6 +16,9 @@ class Bookingconfirm extends Component
 
     public $trip_id;
 
+
+
+
     public function mount(int $trip)
     {
         $this->trip_id = $trip;

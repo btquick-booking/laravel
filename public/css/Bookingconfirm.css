@@ -117,7 +117,12 @@ form{
     font-size: 19px;
     width: 200px;
     height: 85px;
-    margin-left: 1165px;
+    /* margin-left: 1165px; */
+    /* position: relative;
+    left: 1052px; */
+    float: right;
+    margin: 0px 10px 10px 10px;
+
 
 }
 .btn_card{
@@ -140,17 +145,18 @@ p{
 }
 .Price
 {
-    background: #cadbfda3;
+    background: #ffffff;
     padding: 10px;
     border-radius: 20px;
     position: relative;
     top: 554px;
-    left: 63px;
+    left: 1205px;
     display: inline-block;
     font-size: 20px;
     font-family: Raleway;
     font-weight: 600;
     color: #3f70d0;
+    width: 159px;
 }
 
 #card
@@ -162,7 +168,7 @@ p{
     bottom: -370px;
     left: 86px;
     color: #3f70d0;
-    width: 29%;
+    width: 32%;
     height: 45px;
     padding-top: 10px;
     border-radius: 40px;

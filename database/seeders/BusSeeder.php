@@ -11,6 +11,11 @@ class BusSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+    //    $bus = Bus::create([
+    //     'Code' => 22222 ,
+    //     'Seat_Capacity' => 25,
+    //     'Status' => true,
+    //     'Company_id' => 1,
+    //    ]);
     }
 }
