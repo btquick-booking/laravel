@@ -10,7 +10,6 @@ class Search extends Component
 {
     public function mount(SearchRequest $request)
     {
-
     }
 
     public function render()
@@ -18,6 +17,6 @@ class Search extends Component
         $companies = Company::query()
             ->pluck('Company_Name', 'id');
 
-        return view('livewire.search', compact('companies'));
+        return view('livewire.Search', compact('companies'));
     }
 }

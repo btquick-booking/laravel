@@ -71,6 +71,11 @@
             <i class="fas fa-save"></i>
         </button>
 
+        <!-- Main Content -->
+        <div class="main m-10">
+            <button type="button" onclick="openJojo()">Choose chair</button>
+        </div>
+
 
 
         <button id="con" type="button" @click="confirm()">confirm
@@ -316,11 +321,6 @@
         <div id="contentArea">
             <iframe id="contentFrame" src="" width="100%" height="100%" frameborder="0"></iframe>
         </div>
-    </div>
-
-    <!-- Main Content -->
-    <div class="main">
-        <button onclick="openJojo()">Choose chair</button>
     </div>
 
     <!-- JavaScript for handling the side navigation -->
