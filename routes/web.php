@@ -7,11 +7,12 @@ use App\Livewire\Bookingconfirm;
 use App\Livewire\CompanyProfile;
 use App\Livewire\Checkout;
 use App\Livewire\ContactUs;
-use App\Livewire\departurelist;
+use App\Livewire\Departurelist;
 use App\Livewire\seat;
 
 use App\Livewire\Search;
 use App\Livewire\Tripdetails;
+use App\Models\Company;
 use Doctrine\DBAL\Schema\View;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -24,16 +25,20 @@ Route::get('/', function () {
     $valuestore = Valuestore::make('visit.json');
     $valuestore->increment('visit');
 
-    return view('home');
+    $companies = Company::query()
+        ->limit(6)
+        ->get();
+
+    return view('home', compact('companies'));
 })->name('app.home');
 
 
 Route::get('/login', Login::class)->name('app.login');
 // Route::get('/seat', seat::class)->name('app.seat');
 Route::get('/register', Register::class)->name('app.Register');
-Route::get('/company-profile', CompanyProfile::class)->name('app.companyprofile');
+Route::get('/company-profile/{profile}', CompanyProfile::class)->name('app.companyprofile');
 Route::get('/Search', Search::class)->name('app.Search');
-Route::get('/departurelist', departurelist::class)->name('app.departurelist');
+Route::get('/departurelist', Departurelist::class)->name('app.departurelist');
 Route::get('/contactus', ContactUs::class)->name('app.contactus');
 Route::get('/trip/{trip}', Tripdetails::class)->name('app.Tripdetails');
 
@@ -44,5 +49,4 @@ Route::post('fcm_token', function (Request $request) {
     return auth()->user()?->tokens()->updateOrCreate(['token' => $request->token], ['token' => $request->token]);
 
     Route::get('/Seat', seat::class)->name('app.seat');
-
 });

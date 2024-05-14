@@ -16,7 +16,7 @@ class CompanyProfile extends Component
 
     public function mount(CompanyProfile $profile)
     {
-        $this->id = $profile->company_id;
+        $this->company_id = $profile->company_id;
 
         $this->name = $profile->name;
         $this->Phone_Number = $profile->Phone_Number;

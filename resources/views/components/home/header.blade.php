@@ -1,30 +1,36 @@
 <header>
 
-        <nav class="navbar">
-            <div class="flex justify-between items-end mt-[37px] mb-[37px] ml-[26px] mr-[26px]" >
-                <img class="w-[126px] mt-[23px] mr-[0px] mb-[-34px] ml-[20px]" src="{{ asset('images/logoBus-removebg-preview.png') }}" alt="bus_logo">
-                <nav class="w-[600px] float-left h-[70px]">
-                    <ul class="list-none mt-[-10px] flex justify-center items-center float-left">
-                        <li class="list-none text-[15.5px] mt-[29px] p-[14px] pr-[26px]"><a class="decoration-[none] text-[18px] font-['Raleway'] font-bold text-[#053ead] hover:text-[#87adf9]"
-                                href="#">Companies</a></li>
-                        <li class="list-none text-[15.5px] mt-[29px] p-[14px] pr-[26px]"><a class="decoration-[none] text-[18px] font-['Raleway'] font-bold text-[#053ead] hover:text-[#87adf9]"
-                                href="{{ route('app.Search') }}">Search Trip</a></li>
-                        <li class="list-none text-[15.5px] mt-[29px] p-[14px] pr-[26px]"><a class="decoration-[none] text-[18px] font-['Raleway'] font-bold text-[#053ead] hover:text-[#87adf9]"  href="{{ route('app.companyprofile') }}">About
-                                Us</a></li>
-                        <li class="list-none text-[15.5px] mt-[29px] p-[14px] pr-[26px]"><a class="decoration-[none] text-[18px] font-['Raleway'] font-bold text-[#053ead] hover:text-[#87adf9]"
-                                href="{{ route('app.contactus') }}">Contact Us</a></li>
-                    </ul>
-                </nav>
+    <nav class="navbar">
+        <div class="mb-[37px] ml-[26px] mr-[26px] mt-[37px] flex items-end justify-between">
+            <img class="mb-[-34px] ml-[20px] mr-[0px] mt-[23px] w-[126px]"
+                src="{{ asset('images/logoBus-removebg-preview.png') }}" alt="bus_logo">
+            <nav class="float-left h-[70px] w-[600px]">
+                <ul class="float-left mt-[-10px] flex list-none items-center justify-center">
+                    <li class="mt-[29px] list-none p-[14px] pr-[26px] text-[15.5px]"><a
+                            class="font-['Raleway'] text-[18px] font-bold text-[#053ead] decoration-[none] hover:text-[#87adf9]"
+                            href="#">Companies</a></li>
+                    <li class="mt-[29px] list-none p-[14px] pr-[26px] text-[15.5px]"><a
+                            class="font-['Raleway'] text-[18px] font-bold text-[#053ead] decoration-[none] hover:text-[#87adf9]"
+                            href="{{ route('app.Search') }}">Search Trip</a></li>
+                    <li class="mt-[29px] list-none p-[14px] pr-[26px] text-[15.5px]"><a
+                            class="font-['Raleway'] text-[18px] font-bold text-[#053ead] decoration-[none] hover:text-[#87adf9]"
+                            href="{{ route('app.home') }}">About
+                            Us</a></li>
+                    <li class="mt-[29px] list-none p-[14px] pr-[26px] text-[15.5px]"><a
+                            class="font-['Raleway'] text-[18px] font-bold text-[#053ead] decoration-[none] hover:text-[#87adf9]"
+                            href="{{ route('app.contactus') }}">Contact Us</a></li>
+                </ul>
+            </nav>
 
-                    @if (auth()->check())
-                        @livewire('logout-componant')
-                    @else
-                        <a href="{{ route('app.login') }}"> <button type="submit" class="mt-[-10px] w-[100px] h-[40px] bg-[#fff] rounded-[40px] text-[17px] font-['Raleway']
-                            font-bold inline-block cursor-pointer text-[#3f70d0] transition duration-[.3s] ease-in hover:bg-[#3f70d0] hover:text-[#fff]  "
-                            style="border: 2px solid #fff; box-shadow: 0px 1px 10px;">Login</button></a>
-                    @endif
-                </div>
-        </nav>
+            @if (auth()->check())
+                @livewire('logout-componant')
+            @else
+                <a href="{{ route('app.login') }}"> <button type="submit"
+                        class="mt-[-10px] inline-block h-[40px] w-[100px] cursor-pointer rounded-[40px] bg-[#fff] font-['Raleway'] text-[17px] font-bold text-[#3f70d0] transition duration-[.3s] ease-in hover:bg-[#3f70d0] hover:text-[#fff]"
+                        style="border: 2px solid #fff; box-shadow: 0px 1px 10px;">Login</button></a>
+            @endif
+        </div>
+    </nav>
 
     <div class="absolute bg-white md:hidden" x-data="{ isOpen: false }">
         <button @click="isOpen = !isOpen"
@@ -43,15 +49,21 @@
 
 
 
-    <div class="w-[1200px] h-auto mt-[10px] mr-[10px] mb-[10px] ml-[54px] flex flex-col justify-center">
-        <h1 class="text-[60px] text-[#3f70d0] font-bold pl-[20px] mt-[7%] tracking-[2px]" style="text-shadow: 1px 1px 3px #ababab;">TRAVEL IT </h1><br>
-        <h3 class="font-[600px] ml-[21px] text-[#3f70d099]">ONLINE SERVICE</h3><br>
-        <p class="tracking-[1.5px] pl-[20px] pb-[25px] font-['Raleway'] leading-[30px] text-[18px] font-[600px] text-[#4e4d4d]">A Website for organizing and managing trips and<br>
+    <div class="mb-[10px] ml-[54px] mr-[10px] mt-[10px] flex h-auto w-[1200px] flex-col justify-center">
+        <h1 class="mt-[7%] pl-[20px] text-[60px] font-bold tracking-[2px] text-[#3f70d0]"
+            style="text-shadow: 1px 1px 3px #ababab;">TRAVEL IT </h1><br>
+        <h3 class="ml-[21px] font-[600px] text-[#3f70d099]">ONLINE SERVICE</h3><br>
+        <p
+            class="pb-[25px] pl-[20px] font-['Raleway'] text-[18px] font-[600px] leading-[30px] tracking-[1.5px] text-[#4e4d4d]">
+            A Website for organizing and managing trips and<br>
             reservations throughout Syria between customers<br>
             and transportation companies to facilitate the<br>
-             reservation process, save time,and achieve <br>
-             a unique experience for users.</P>
-        <button  class="w-[160px] h-[40px] bg-[#3f70d0] border-none mb-[10px] ml-[20px] text-[18px] font-['Raleway'] font-bold rounded-[40px] cursor-pointer transition duration-[.4s] ease-in hover:bg-[#4784dc] hover:shadow-slate-500" style=":hover{box-shadow:1px 2px 7px #ababab}">
-            <a class="decoration-[none] text-[#fff] transition duration-[.3s] ease-in  font-['Raleway'] tracking-[2px]" href="{{ route('app.Register') }}">Sign Up</a></button>
+            reservation process, save time,and achieve <br>
+            a unique experience for users.</P>
+        <button
+            class="mb-[10px] ml-[20px] h-[40px] w-[160px] cursor-pointer rounded-[40px] border-none bg-[#3f70d0] font-['Raleway'] text-[18px] font-bold transition duration-[.4s] ease-in hover:bg-[#4784dc] hover:shadow-slate-500"
+            style=":hover{box-shadow:1px 2px 7px #ababab}">
+            <a class="font-['Raleway'] tracking-[2px] text-[#fff] decoration-[none] transition duration-[.3s] ease-in"
+                href="{{ route('app.Register') }}">Sign Up</a></button>
     </div>
 </header>
