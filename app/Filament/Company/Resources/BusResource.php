@@ -3,6 +3,7 @@
 namespace App\Filament\Company\Resources;
 
 use App\Filament\Company\Resources\BusResource\Pages;
+use Illuminate\Database\Eloquent\Builder;
 use App\Models\Bus;
 use Filament\Forms;
 use Filament\Forms\Form;
@@ -77,12 +78,12 @@ class BusResource extends Resource
 
     public static function getRelations(): array
     {
-        return [
-            //       return parent::getEloquentQuery()->where('company_id', auth()->user()->company->id);
+        return [];
+    }
 
-            // return parent::getEloquentQuery()->where('company_id', [auth()->user()->company->id]);
-        ];
-
+    public static function getEloquentQuery(): Builder
+    {
+        return parent::getEloquentQuery()->where('company_id', auth()->user()->company->id);
     }
 
     public static function getPages(): array

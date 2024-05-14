@@ -193,7 +193,7 @@
                                 <!-- Slide-start -->
                                 <div class="swiper-slide tranding-slide">
                                     <div class="tranding-slide-img">
-                                        <img src="{{ $company->CompanyProfiles?->image }}"
+                                        <img src="{{ asset("storage/{$company->CompanyProfiles->image}") }}"
                                             alt="{{ $company->Company_Name }}">
                                     </div>
                                     <div class="tranding-slide-content">
@@ -203,7 +203,7 @@
                                                 {{ $company->Company_Name }}
                                             </h2>
                                             <a
-                                                href="{{ route('app.companyprofile', ['profile' => $company->CompanyProfiles?->id ?? 1]) }}"><button
+                                                href="{{ route('app.companyprofile', ['profile' => $company->CompanyProfiles->id]) }}"><button
                                                     class="btn_comp" type="button">Company
                                                     profile</button></a>
                                             <!-- <h3 class="food-rating">

@@ -16,9 +16,6 @@ return new class extends Migration
             $table->id();
             $table->foreignIdFor(Company::class)->constrained();
             $table->string('image');
-            $table->string('name');
-            $table->string('Phone_Number');
-            $table->string('Email');
             $table->string('address');
             $table->string('details');
 

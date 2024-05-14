@@ -2,6 +2,7 @@
 
 namespace App\Filament\Company\Resources;
 
+use Illuminate\Database\Eloquent\Builder;
 use App\Filament\Company\Resources\BookResource\Pages;
 use App\Models\Book;
 use Filament\Forms;
@@ -38,7 +39,7 @@ class BookResource extends Resource
                             ->numeric(),
                         Forms\Components\DatePicker::make('Birth_date')
                             ->required(),
-                            Forms\Components\Select::make('Gander')
+                        Forms\Components\Select::make('Gander')
                             ->options([
                                 'Male' => 'Male',
                                 'Female' => 'Female',
@@ -48,6 +49,7 @@ class BookResource extends Resource
 
                         Forms\Components\Select::make('trip_id')
                             ->relationship('trip', 'Starting_place')
+                            ->getOptionLabelFromRecordUsing(fn ($record) => "{$record->Starting_place} -> {$record->Destination_place}")
                             ->required(),
                         // Forms\Components\Hidden::make('customer_id')->default(auth()->user()->customer->id),
                         // Forms\Components\Select::make('customer_id')
@@ -106,6 +108,12 @@ class BookResource extends Resource
         return [
             //
         ];
+    }
+
+    public static function getEloquentQuery(): Builder
+    {
+        return parent::getEloquentQuery()->whereHas('Trip', fn ($q) =>
+        $q->whereHas('bus', fn ($q) => $q->where('company_id', auth()->user()->company->id)));
     }
 
     public static function getPages(): array

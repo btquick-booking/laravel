@@ -44,7 +44,18 @@ class CompanyResource extends Resource
                             ->required(),
                         Forms\Components\Hidden::make('name')->default('company'),
                     ]),
-
+                Forms\Components\Fieldset::make('General info')
+                    ->relationship('CompanyProfiles')
+                    ->schema([
+                        Forms\Components\FileUpload::make('image')
+                            ->image()
+                            ->imageEditor()
+                            ->required(),
+                        Forms\Components\TextInput::make('address')
+                            ->required(),
+                        Forms\Components\TextInput::make('details')
+                            ->required(),
+                    ]),
             ]);
     }
 

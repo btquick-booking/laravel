@@ -8,12 +8,11 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class CompanyProfile extends Model
 {
+    use HasFactory;
+
     protected $fillable = [
         'company_id',
         'image',
-        'name',
-        'Phone_Number',
-        'Email',
         'address',
         'details',
 
@@ -23,6 +22,4 @@ class CompanyProfile extends Model
     {
         return $this->belongsTo(Company::class);
     }
-
-    use HasFactory;
 }
