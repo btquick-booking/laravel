@@ -4,6 +4,8 @@
 
 <x-slot:css>
     <link rel="stylesheet" href="{{ asset('css/Bookingconfirm.css') }}">
+    {{-- <link rel="stylesheet" href="{{ asset('css/style2.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/jquery.seat-charts.css') }}"> --}}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -12,7 +14,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 
 </x-slot:css>
+
+
+
+
+
 <div x-data="data()" x-init="init()">
+
 
     <div class="Price">
         <h2 style="text-align: center">Total Price :</h2>
@@ -51,15 +59,18 @@
 
         <br>
         <input class="data" type="date" placeholder="Birthdate" name="Birth_date" required x-model="Birth_date"
-            style="border-radius: 40px;">
+            style="border-radius: 40px;" max="">
         <input class="data" type="text" placeholder="Gander" name="gander" required x-model="Gander"
             style="border-radius: 40px;">
         <br>
+        <input class="data" type="text" placeholder="Phone Number" name="PhoneNumber" required=""
+            x-model="PhoneNumber" style="border-radius: 40px;top: 67px;">
         <button id="plus" type="button" x-show="selectedIndex == null" @click="add()">+</button>
         {{-- <button id="plus" type="button" x-show="selectedIndex != null" @click="add()">Save</button> --}}
         <button id="plus" type="button" x-show="selectedIndex != null" @click="add()">
             <i class="fas fa-save"></i>
         </button>
+
 
 
         <button id="con" type="button" @click="confirm()">confirm
@@ -76,11 +87,23 @@
         </div>
     </div>
 
+ 
+
+
+
     <x-slot:js>
         <script src="book.js"></script>
+        <script>
+            document.getElementById('datePicker').max = new Date().toISOString().split("T")[0];
+        </script>
+        <script src="{{ asset('/resources/js/seat.js') }}"></script>
+            <script src="{{ asset('/resources/js/jquery.seat-charts.js') }}"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <script src="js/jquery.seat-charts.js"></script>
     </x-slot:js>
-
     <script src="https://js.stripe.com/v3/"></script>
+
 
     <script>
         function data() {

@@ -8,10 +8,10 @@ body{
 header{
     background :url(../images/BusHome.png)
 }
-
-#sec{
-    background :url(../images/section22.png)
-}
+/* 
+.sec{
+    background :url(../images/section22.png);
+} */
 
 
 

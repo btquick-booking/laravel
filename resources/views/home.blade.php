@@ -18,15 +18,9 @@
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
     @vite('resources/js/app.js')
-    @vite('resources/js/script.js')
+    {{-- @vite('resources/js/script.js') --}}
     @vite('resources/css/filament/admin/theme.css')
-    <x-slot:js>
-        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-        <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
 
-        <script src="{{ asset('../js/script.js') }}"></script>
-    </x-slot:js>
     <title>HOME</title>
 </head>
 
@@ -102,8 +96,8 @@
         </div>
     </header>
     <main>
-        <section id="sec" class="bg-cover bg-no-repeat min-h-[116vh] flex  justify-center items-center"
-            style="background-image: url('section22.png')">
+        <section class="bg-cover bg-no-repeat min-h-[116vh] flex  justify-center items-center"
+        style="background-image: url({{ asset('images/section22.png') }})">
             <div class="container">
                 <div class="text-center mb-[5rem]">
                     <h1 class="text-[50px] mb-[20px] text-[#3f70d0] font-bold"
@@ -184,7 +178,7 @@
 
 
 
-        <section id="company" class="bg-cover bg-no-repeat h-[117vh]" style="background-image: url('sec3.png')">
+        <section id="company" class="bg-cover bg-no-repeat h-[117vh]" style="background-image: url({{ asset('images/Section33.png') }})">
 
             <section id="tranding">
                 <div class="container1">
@@ -198,7 +192,7 @@
                             <!-- Slide-start -->
                             <div class="swiper-slide tranding-slide">
                                 <div class="tranding-slide-img">
-                                    <img src="companyBus.jpg" alt="Tranding">
+                                    <img src="{{ asset('images/compaphoto2.png') }}" alt="Tranding">
                                 </div>
                                 <div class="tranding-slide-content">
                                     <!-- <h1 class="food-price">$20</h1> -->
@@ -306,7 +300,7 @@
                             <!-- Slide-start -->
                             <div class="swiper-slide tranding-slide">
                                 <div class="tranding-slide-img">
-                                    <img src="{{ asset('images/companyphoto3.png') }}" alt="Tranding">
+                                    <img src="{{ asset('images/compaphoto2.png') }}" alt="Tranding">
                                 </div>
                                 <div class="tranding-slide-content">
                                     <!-- <h1 class="food-price">$15</h1> -->
@@ -360,7 +354,7 @@
                             <!-- Slide-start -->
                             <div class="swiper-slide tranding-slide">
                                 <div class="tranding-slide-img">
-                                    <img src="{{ asset('images/companyphoto3.png') }}" alt="Tranding">
+                                    <img src="{{ asset('images/compaphoto2.png') }}" alt="Tranding">
                                 </div>
                                 <div class="tranding-slide-content">
                                     <!-- <h1 class="food-price">$8</h1> -->
@@ -411,7 +405,7 @@
 
 
         <section class="bg-cover bg-no-repeat h-[93vh] flex justify-center items-center"
-            style="background-image: url(section4.png);">
+        style="background-image: url({{ asset('images/section4.png') }})">
 
 
             <div class="center">
@@ -444,7 +438,7 @@
         class="bg-[#3f70d0] bg-cover bg-no-repeat min-h-[50vh] flex justify-around items-center text-[#ffffffda] relative">
         <div class="ml-[-29px] mb-[30px]">
             <div class="relative left-[-10px]">
-                <img src="travelit_logo3.png" width="200px" height="128px" alt="">
+                <img src="{{ asset('images/travelit_logo3.png') }}" width="200px" height="128px" alt="">
             </div>
             <div class="column1">
                 <!-- <h2>TRAVEL IT</h2> -->
@@ -512,6 +506,15 @@
     @filamentScripts
     @livewireScripts
 
+    <x-slot:js>
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+        <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+
+        {{-- <script src="{{ asset('../js/script.js.js') }}"></script> --}}
+        <script src="{{ asset('../js/jquery.seat-charts.js') }}"></script>
+        <script src="{{ asset('../js/seat.js') }}"></script>
+    </x-slot:js>
 </body>
 
 </html>

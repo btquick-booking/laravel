@@ -12,29 +12,20 @@ use Livewire\Attributes\Validate;
 use Filament\Notifications\Notification;
 use Illuminate\Validation\Rule;
 use Carbon\Carbon;
+
 class Bookingconfirm extends Component
 {
 
     public $trip_id;
 
+
+    #[Validate('required|date|before:2024-5-11')]
     public $Birth_date;
 
-    protected $rules = [
-        'Birth_date' => 'required|date',
-    ];
 
-    public function updated($propertyName)
-    {
-        $this->validateOnly($propertyName);
-        if ($propertyName === 'Birth_date') {
-            $this->validate([
-                'Birth_date' => Rule::before(Carbon::now()->format('Y-m-d')),
-                
-            ]);
-        }
-    }
     public function mount(int $trip)
     {
+
         $this->trip_id = $trip;
     }
 

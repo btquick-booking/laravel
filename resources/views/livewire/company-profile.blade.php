@@ -11,7 +11,6 @@
 
     </x-slot:css>
 
-    <x-slot:title>
         CompanyProfile
     </x-slot:title>
     <div class="profile">
