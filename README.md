@@ -1,7 +1,9 @@
 # Installation
 - clone the project
 ```bash
-git clone https://github.com/btquick-booking/laravel.git
+git clone https://github.com/btquick-booking/laravel.git 
+
+cd laravel
  ```
 - run this commands
 ```bash
