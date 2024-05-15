@@ -78,7 +78,7 @@
                     <button class="btn_status">
                         Current trip
                     </button>
-                    <button class="btn_Edit_card">Edit</button>
+                    <button class="btn_Edit_card" wire:click="cancel({{ $trip }})">Cancel</button>
                 @endif
 
 
