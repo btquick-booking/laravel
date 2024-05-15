@@ -1,0 +1,328 @@
+body {
+    background: url(../images/companprofile.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: 'Raleway';
+    position: relative;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.image {
+    position: relative;
+    top: 45px;
+}
+
+.image img {
+    width: 200px;
+    height: 200px;
+    border-radius: 100px;
+    position: relative;
+    left: 68px;
+    top: 48px;
+}
+
+.btn_home {
+    width: 160px;
+    height: 40px;
+    background: #3f70d0;
+    border: none;
+    font-size: 18px;
+    font-family: 'Raleway';
+    font-weight: bold;
+    border-radius: 40px;
+    cursor: pointer;
+    color: #fff;
+    position: relative;
+    top: 91px;
+    right: 106px;
+}
+
+.btn_logout {
+    width: 127px;
+    height: 40px;
+    background: #3f70d0;
+    border: none;
+    font-size: 17px;
+    font-family: 'Raleway';
+    font-weight: bold;
+    border-radius: 40px;
+    cursor: pointer;
+    color: #fff;
+    position: relative;
+    top: 96px;
+    left: 114px;
+    display: block;
+}
+
+.line {
+    height: 680px;
+    width: 3px;
+    background-color: #3f70d0;
+    position: absolute;
+    left: 332px;
+    top: 27px;
+}
+
+.h2_profile {
+    font-family: 'Raleway';
+    font-size: 45px;
+    color: #3f70d0;
+    position: absolute;
+    top: -13px;
+    left: 358px;
+    text-shadow: 1px 1px 3px #ababab;
+}
+
+.h2_profile::before {
+    border-bottom: 3px solid #acafc3;
+    content: "";
+    height: 26px;
+    width: 185%;
+    position: absolute;
+    top: 28px;
+}
+
+h3 {
+    font-size: 24px;
+    font-family: 'Raleway';
+    font-weight: 700;
+    color: #3f70d0;
+    margin: 40px 0px;
+}
+
+h3::before {
+    border-bottom: 3px solid #acafc3;
+    content: "";
+    height: 3px;
+    width: 4%;
+    position: absolute;
+    top: 28px;
+
+}
+
+span {
+    position: relative;
+    left: 3px;
+    font-family: 'Raleway';
+    color: #587787;
+    font-weight: 500;
+    font-size: 23px;
+    margin: 1px 0px;
+}
+
+.User_info {
+    position: relative;
+    bottom: 175px;
+    left: 374px;
+}
+
+.my_trips {
+    position: absolute;
+    top: 457px;
+    left: 368px;
+    /* background: #ffffff;
+    border-radius: 15px;
+    padding: 46px 50px 93px;
+    box-shadow: 0px 13px 16px #e5e5e5;
+    margin: 50px 2% 50px 2%;
+    text-align: center;
+    position: relative;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .2);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    color: #54A9BE;
+    border-radius: 40px;
+    transition: 1s; */
+}
+
+.btn_edit {
+    width: 93px;
+    height: 36px;
+    background: #3f70d0;
+    border: none;
+    font-size: 16px;
+    font-family: 'Raleway';
+    font-weight: bold;
+    border-radius: 40px;
+    cursor: pointer;
+    color: #fff;
+    position: relative;
+    bottom: 235px;
+    left: 370px;
+
+}
+
+.btn_delete {
+    width: 93px;
+    height: 36px;
+    background: #e34a4a;
+    border: none;
+    font-size: 16px;
+    font-family: 'Raleway';
+    font-weight: bold;
+    border-radius: 40px;
+    cursor: pointer;
+    color: #fff;
+    position: relative;
+    bottom: 317px;
+    left: 376px;
+}
+
+.line2 {
+    height: 3px;
+    width: 680px;
+    background-color: #3f70d0;
+    position: absolute;
+    left: 349px;
+    top: 369px;
+}
+
+/* .profile_card{
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .2);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    padding: 40px 39px 36px;
+    border-radius: 40px;
+    width: 924px;
+    height: 525px;
+    position: absolute;
+    left: 238px;
+    top: 94px;
+} */
+.trip {
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0px 2px 4px #bbbbbb;
+    width: 267px;
+    height: 258px;
+
+}
+
+.h2_trip {
+    font-family: 'Raleway';
+    font-size: 45px;
+    color: #3f70d0;
+    position: absolute;
+    top: 347px;
+    left: 358px;
+    text-shadow: 1px 1px 3px #ababab;
+}
+
+.h2_trip::before {
+    border-bottom: 3px solid #acafc3;
+    content: "";
+    height: 26px;
+    width: 185%;
+    position: absolute;
+    top: 28px;
+}
+
+
+.fa-solid,
+.fas {
+    font-weight: 900;
+    position: absolute;
+    top: 17px;
+    left: 16px;
+    color: #fff;
+    font-size: 20px;
+}
+
+h4 {
+    /* font-family: 'Raleway';
+    font-size: 20px;
+    color: #1a4fb6;
+    margin: 0px;
+    position: absolute;
+    left: 20px;
+    top: 6px; */
+
+    /* new */
+
+    font-family: 'Raleway';
+    font-size: 18px;
+    color: #1a4fb6;
+
+}
+
+p {
+    POSITION: absolute;
+    left: 101px;
+    top: 111px;
+    color: #3f70d0;
+}
+
+.top_part {
+    background-color: #4f84ea;
+    border-radius: 20px;
+    box-shadow: 0px 2px 4px #bbbbbb;
+    width: 267px;
+    height: 86px;
+}
+
+.circle1 {
+    height: 70px;
+    width: 70px;
+    border-radius: 100px;
+    position: relative;
+    left: 95px;
+    bottom: 39px;
+    background: #93b5f7d1;
+}
+
+.circle2 {
+    height: 55px;
+    width: 55px;
+    border-radius: 100px;
+    position: absolute;
+    right: 7px;
+    bottom: 9px;
+    background: #4f84eade;
+}
+
+.btn_status {
+    position: relative;
+    bottom: 59px;
+    left: 9px;
+    font-family: 'Raleway';
+    font-size: 18px;
+    color: #1a4fb6;
+    border-radius: 37px;
+    border: none;
+    padding: 9px;
+    background-color: #aec9fd47;
+    width: 251px;
+}
+
+.time_date {
+    position: relative;
+    bottom: 93px;
+    left: 19px;
+}
+
+.fa-light,
+.fa-location-do:before {
+    content: "\f3c5";
+}
+
+.btn_Edit_card {
+    width: 81px;
+    height: 36px;
+    background: #3f70d0;
+    border: none;
+    font-size: 16px;
+    font-family: 'Raleway';
+    font-weight: bold;
+    border-radius: 40px;
+    cursor: pointer;
+    color: #fff;
+    position: absolute;
+    bottom: 9px;
+    right: 10px;
+    box-shadow: 1px 1px 5px #ababab;
+}

@@ -12,6 +12,7 @@ use App\Livewire\seat;
 
 use App\Livewire\Search;
 use App\Livewire\Tripdetails;
+use App\Livewire\UserProfile;
 use App\Models\Company;
 use Doctrine\DBAL\Schema\View;
 use Illuminate\Http\Request;
@@ -34,6 +35,7 @@ Route::get('/', function () {
 
 
 Route::get('/login', Login::class)->name('app.login');
+Route::get('/profile', UserProfile::class)->middleware('auth')->name('app.profile');
 // Route::get('/seat', seat::class)->name('app.seat');
 Route::get('/register', Register::class)->name('app.Register');
 Route::get('/company-profile/{profile}', CompanyProfile::class)->name('app.companyprofile');

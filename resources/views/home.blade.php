@@ -51,7 +51,12 @@
                 </nav>
 
                 @if (auth()->check())
-                    @livewire('logout-componant')
+                    <div class="flex">
+                        @livewire('logout-componant')
+                        <a href="{{ route('app.profile') }}"> <button type="submit"
+                                class="mt-[-10px] inline-block h-[40px] w-[100px] cursor-pointer rounded-[40px] bg-[#fff] font-['Raleway'] text-[17px] font-bold text-[#3f70d0] transition duration-[.3s] ease-in hover:bg-[#3f70d0] hover:text-[#fff]"
+                                style="border: 2px solid #3f70d0; box-shadow: 0px 1px 7px;">Profile</button></a>
+                    </div>
                 @else
                     <a href="{{ route('app.login') }}"> <button type="submit"
                             class="mt-[-10px] inline-block h-[40px] w-[100px] cursor-pointer rounded-[40px] bg-[#fff] font-['Raleway'] text-[17px] font-bold text-[#3f70d0] transition duration-[.3s] ease-in hover:bg-[#3f70d0] hover:text-[#fff]"
