@@ -173,7 +173,19 @@
                         this.payment_method_id = paymentMethod.id
                     })
                 },
+                validateDate() {
+                    var inputDate = this.Birth_date;
+                    var today = new Date().toISOString().split('T')[0]; // Get today's date in YYYY-MM-DD format
+                    if (inputDate > today) {
+                        alert("Please select a date before today.");
+                        return false;
+                    }
+                    return true;
+                },
                 add() {
+                    if (!this.validateDate()) {
+                        return
+                    }
                     const data = {
                         FullName: this.FullName,
                         MotherName: this.MotherName,

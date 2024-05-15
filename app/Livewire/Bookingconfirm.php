@@ -8,6 +8,7 @@ use Livewire\Component;
 use Illuminate\Support\Str;
 use App\Helpers\StripeHelper;
 use App\Jobs\SendFcmBeforeTrip;
+use App\Models\User;
 use Livewire\Attributes\Validate;
 use Filament\Notifications\Notification;
 use Illuminate\Validation\Rule;
@@ -18,8 +19,6 @@ class Bookingconfirm extends Component
 
     public $trip_id;
 
-
-    #[Validate('required|date|before:2024-5-11')]
     public $Birth_date;
 
 
@@ -42,10 +41,15 @@ class Bookingconfirm extends Component
 
         $stripeHelper = new StripeHelper;
         $confirmation_number = Str::uuid();
-            $user = auth()->user() ?? new User;
+        $user = auth()->user() ?? new User;
 
-            $stripeHelper->charge($user, $confirmation_number,
-            $totalPrice, $payment_method_id, $email);
+        $stripeHelper->charge(
+            $user,
+            $confirmation_number,
+            $totalPrice,
+            $payment_method_id,
+            $email
+        );
 
         // Notification::make('success')
         // ->title('Successfully')
@@ -53,10 +57,9 @@ class Bookingconfirm extends Component
         // ->send();
         $trip = Trip::find($this->trip_id);
 
-        SendFcmBeforeTrip::dispatch( $trip, $user->id)->delay($trip->startDate->subHour());
+        SendFcmBeforeTrip::dispatch($trip, $user->id)->delay($trip->startDate->subHour());
 
         return redirect()->intended(route('app.home'));
-
     }
 
     public function render()

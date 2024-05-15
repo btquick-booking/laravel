@@ -17,6 +17,7 @@
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
     @vite('resources/js/app.js')
     {{-- @vite('resources/js/script.js') --}}
     @vite('resources/css/filament/admin/theme.css')
@@ -188,25 +189,26 @@
                 </div>
                 <div class="container1">
                     <div class="swiper tranding-slider">
-                        <div class="swiper-wrapper">
+                        <swiper-container>
                             @foreach ($companies as $company)
-                                <!-- Slide-start -->
-                                <div class="swiper-slide tranding-slide">
-                                    <div class="tranding-slide-img">
-                                        <img src="{{ asset("storage/{$company->CompanyProfiles->image}") }}"
-                                            alt="{{ $company->Company_Name }}">
-                                    </div>
-                                    <div class="tranding-slide-content">
-                                        <!-- <h1 class="food-price">$20</h1> -->
-                                        <div class="tranding-slide-content-bottom">
-                                            <h2 class="food-name">
-                                                {{ $company->Company_Name }}
-                                            </h2>
-                                            <a
-                                                href="{{ route('app.companyprofile', ['profile' => $company->CompanyProfiles->id]) }}"><button
-                                                    class="btn_comp" type="button">Company
-                                                    profile</button></a>
-                                            <!-- <h3 class="food-rating">
+                                <swiper-slide>
+                                    <!-- Slide-start -->
+                                    <div class="swiper-slide tranding-slide">
+                                        <div class="tranding-slide-img">
+                                            <img src="{{ asset("storage/{$company->CompanyProfiles->image}") }}"
+                                                alt="{{ $company->Company_Name }}">
+                                        </div>
+                                        <div class="tranding-slide-content">
+                                            <!-- <h1 class="food-price">$20</h1> -->
+                                            <div class="tranding-slide-content-bottom">
+                                                <h2 class="food-name">
+                                                    {{ $company->Company_Name }}
+                                                </h2>
+                                                <a
+                                                    href="{{ route('app.companyprofile', ['profile' => $company->CompanyProfiles->id]) }}"><button
+                                                        class="btn_comp" type="button">Company
+                                                        profile</button></a>
+                                                <!-- <h3 class="food-rating">
                                                 <span>4.5</span>
                                                 <div class="rating">
                                                     <ion-icon name="star"></ion-icon>
@@ -216,12 +218,14 @@
                                                     <ion-icon name="star"></ion-icon>
                                                 </div>
                                                 </h3> -->
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <!-- Slide-end -->
+                                    <!-- Slide-end -->
+                                </swiper-slide>
                             @endforeach
-                        </div>
+
+                        </swiper-container>
 
                         <div class="tranding-slider-control">
                             <div class="swiper-button-prev slider-arrow">
